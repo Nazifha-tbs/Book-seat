@@ -1,14 +1,296 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      <div>
+        <img src="../assets/img/profile2.png" class="profileImg">
+        <div style="float: right;margin-top: 10px;">
+          <img src="../assets/icon/searchzoom.svg" class="searchImg">
+          <img src="../assets/icon/notification.svg" class="notification">
+        </div>
+        <span class="profileName">
+          Felicity Smoak
+        </span>
+        <br>
+        <ion-text class="location">
+          Niarobi
+        </ion-text>
+       
+      </div>
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <div class="slideImg">
+    <img [routerLink]="['/theater-list']"  src="../assets/img/boxingoffer.jpg">
+  </div>
+  <div>
+    <ion-text class="seatC">
+      SEAT CATEGORIES
+    </ion-text>
+    <div class="optionSlide">
+      <div class="slide">
+        <img src="../assets/icon/film.svg" class="optImg">
+        <br>
+        <ion-text>
+          movies
+        </ion-text>
+      </div>
+      <div class="slide">
+        <img src="../assets/icon/spotlights.svg" class="optImg">
+        <br>
+        <ion-text>
+          Events
+        </ion-text>
+      </div>
+      <div class="slide">
+        <img src="../assets/icon/play.svg" class="optImg">
+        <br>
+        <ion-text>
+          Plays
+        </ion-text>
+      </div>
+
+      <div class="slide">
+        <img src="../assets/icon/running.svg" class="optImg">
+        <br>
+        <ion-text>
+          Sports
+        </ion-text>
+      </div>
+      <div class="slide">
+        <img src="../assets/icon/flag.svg" class="optImg">
+        <br>
+        <ion-text>
+          Activity
+        </ion-text>
+      </div>
+      <div class="slide">
+        <img src="../assets/icon/film.svg" class="optImg">
+        <br>
+        <ion-text>
+          movies
+        </ion-text>
+      </div>
+      <div class="slide">
+        <img src="../assets/icon/spotlights.svg" class="optImg">
+        <br>
+        <ion-text>
+          Events
+        </ion-text>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <ion-text class="seatC">
+      IN THEATERS
+    </ion-text>
+    <div class="moviesSlide">
+      <div class="moviesBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/images.png">
+          <br>
+          <ion-label class="movieName">
+            Charli's angle
+          </ion-label>
+          <div style="margin-top: 5px;">
+            <img src="../assets/icon/like.svg" class="like">
+            <span class="likeVal">
+              98%
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="moviesBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/images1.png">
+          <br>
+          <ion-label class="movieName">
+            Jumanji
+          </ion-label>
+          <div style="margin-top: 5px;">
+            <img src="../assets/icon/like.svg" class="like">
+            <span class="likeVal">
+              98%
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="moviesBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/images2.png">
+          <br>
+          <ion-label class="movieName">
+            Bad Boys
+          </ion-label>
+          <div style="margin-top: 5px;">
+            <img src="../assets/icon/like.svg" class="like">
+            <span class="likeVal">
+              98%
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="moviesBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/images3.png">
+          <br>
+          <ion-label class="movieName">
+            Spies in Disgu...
+          </ion-label>
+          <div style="margin-top: 5px;">
+            <img src="../assets/icon/like.svg" class="like">
+            <span class="likeVal">
+              98%
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div>
+    <div style="padding-left:20px;padding-right: 20px;">
+      <ion-label class="title">
+        NEARBY THEATERS
+      </ion-label>
+      <ion-label class="view">
+        View all
+      </ion-label>
+    </div>
+
+    <div style="text-align: center;">
+      <img src="../assets/img/map.png" class="map">
+
+    </div>
+  </div>
+  <div>
+    <div style="padding-left:20px;padding-right: 20px;margin-top: 25px;">
+      <img src="../assets/icon/spotlightsBlack.svg" class="like">
+      <ion-label class="title">
+        EVENTS
+      </ion-label>
+      <ion-label class="view">
+        View all
+      </ion-label>
+    </div>
+
+    <div class="eventSlide">
+      <div class="eventsBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/events.png">
+          <br>
+          <span class="movieName ion-text-wrap">
+            Happy Halloween 2K19
+          </span>
+          <div style="margin-top: 5px;">
+
+            <ion-label class="likeVal">
+              Music show
+            </ion-label>
+          </div>
+        </div>
+      </div>
+      <div class="eventsBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/event.png">
+          <br>
+          <span class="movieName ion-text-wrap">
+            Summer sounds festiva..
+          </span>
+          <div style="margin-top: 5px;">
+
+            <ion-label class="likeVal">
+              Comedy show
+            </ion-label>
+          </div>
+        </div>
+      </div>
+      <div class="eventsBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/event1.png">
+          <br>
+          <span class="movieName ion-text-wrap">
+            Happy Halloween 2K19
+          </span>
+          <div style="margin-top: 5px;">
+
+            <ion-label class="likeVal">
+              Music show
+            </ion-label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div>
+    <div style="padding-left:20px;padding-right: 20px;">
+      <img src="../assets/icon/playBlack.svg" class="like">
+      <ion-label class="title">
+        Play
+      </ion-label>
+      <ion-label class="view">
+        View all
+      </ion-label>
+    </div>
+
+    <div class="eventSlide">
+      <div class="eventsBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/play.png">
+          <br>
+          <span class="movieName ion-text-wrap">
+            Happy Halloween 2K19
+          </span>
+          <div style="margin-top: 5px;">
+
+            <ion-label class="likeVal">
+              Music show
+            </ion-label>
+          </div>
+        </div>
+      </div>
+      <div class="eventsBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/play1.png">
+          <br>
+          <span class="movieName ion-text-wrap">
+            Summer sounds festiva..
+          </span>
+          <div style="margin-top: 5px;">
+
+            <ion-label class="likeVal">
+              Comedy show
+            </ion-label>
+          </div>
+        </div>
+      </div>
+
+      <div class="eventsBlock">
+        <div>
+          <img class="movieImg" src="../assets/img/play2.png">
+          <br>
+          <span class="movieName ion-text-wrap" >
+            Happy Halloween 2K19
+          </span>
+          <div style="margin-top: 5px;">
+
+            <ion-label class="likeVal">
+              Music show
+            </ion-label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </ion-content>

@@ -1,0 +1,186 @@
+ion-toolbar {
+  --background: #222539;
+  color: white;
+}
+ion-content {
+  font-family: "Poppins-Regular" !important;
+  --background: #f5f5fa;
+}
+ion-title {
+  padding-left: 15px;
+  padding-top: 3px;
+  font-size: 16px;
+}
+ion-col {
+  max-width: 106px;
+  width: 100px;
+}
+ion-button {
+  width: 90px;
+}
+ion-footer {
+  height: 50px;
+  bottom: 0%;
+  position: fixed;
+  --background: #222539 !important;
+  color: white;
+}
+.footerBar {
+  font-weight: lighter;
+  text-shadow: 0px 0px 0px 0px;
+  font-family: "Poppins-ExtraLight" !important;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.back {
+  margin-left: 10px;
+  float: left;
+  height: 25px;
+  width: 20px;
+}
+.list {
+  padding: 16px;
+  background: white !important;
+  margin-bottom: 20px;
+}
+.theaterName {
+  color: #222539;
+}
+.info {
+  float: right;
+}
+.smallGrey {
+  color: #999999;
+  font-size: 11px;
+  font-family: "Poppins-Regular";
+}
+.distance {
+  color: #333333;
+  font-size: 11px;
+  margin-left: 5px;
+}
+.buttonActive {
+  color: #2ec492;
+  background: #fcfcfc !important;
+  border: 1px solid #e5e5e5;
+}
+.buttonStyle {
+  color: #eb8d2f;
+  background: #fcfcfc !important;
+  border: 1px solid #e5e5e5;
+}
+.buttonInactive {
+  color: #e5e5e5;
+  background: #fcfcfc !important;
+  border: 1px solid #e5e5e5;
+}
+.vehicle {
+  margin-top: 40px;
+  height: 85px;
+  width: 150px;
+  .oval {
+    align-self: center !important;
+    text-align: center !important;
+    opacity: 0.2;
+    width: 150px;
+    height: 6px;
+    filter: blur(1.5px);
+    background: #66666696;
+    border-radius: 120px / 50px;
+  }
+}
+.numberBtn {
+  border-radius: 5px;
+  height: 32px;
+  width: 30px;
+  font-size: 15px;
+  color: #666666;
+  margin-right: 2px;
+  background: white;
+}
+button.active {
+  border-radius: 5px;
+  height: 32px;
+  width: 30px;
+  font-size: 15px;
+  margin-right: 2px;
+  color: white;
+  background: #2ec492;
+}
+button.activated {
+  min-width: 85px;
+  min-height: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 16px;
+  color: white;
+  background: #2ec492;
+  height: 130px;
+  width: 85px;
+  max-height: 130px;
+  max-width: 92px;
+  .fill {
+    color: white;
+    font-size: 12px;
+    font-weight: lighter;
+  }
+  .lightFont {
+    opacity: 0.6;
+    font-size: 12px;
+  }
+}
+.seatRate {
+  border: 1px solid #e5e5e5;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 16px;
+  color: black;
+  background: #fcfcfc;
+  height: 130px;
+  width: 85px;
+  min-width: 85px;
+  min-height: 120px;
+  max-height: 130px;
+  max-width: 92px;
+  .fill {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #666666;
+  }
+  .lightFont {
+    opacity: 0.6;
+    font-size: 12px;
+  }
+}
+.oval {
+  margin-left: 35%;
+  align-self: center !important;
+  text-align: center !important;
+  opacity: 0.2;
+  width: 110px;
+  height: 6px;
+  filter: blur(2px);
+  background: #66666696;
+  border-radius: 120px / 50px;
+}
+
+.bookSeat {
+  margin: 0%;
+  bottom: 0% !important;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: #e81667;
+  color: white;
+  font-size: 15px;
+  font-family: "Poppins-Regular" !important;
+}
+.seatDiv {
+  padding-top: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background: white !important;
+  text-align: center;
+  height: 100% !important;
+}

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+  <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/home']">
+    <ion-title class="title">Black Panther 
+      <img src="../assets/icon/searchzoom.svg" class="searchImg">
+      <img src="../assets/icon/filter.svg" class="searchImg"></ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="margin-bottom: 60px;">
+
+<div class="list" id="lists"  *ngFor="let theater of lists;let i = index;" >
+  <div>
+    <span class="theaterName">
+      {{theater.name}}
+     
+    </span>
+    <img src="../assets/icon/information.svg" class="info"(click)="openModal(i)">
+    <br>
+    <span class="smallGrey">{{theater.city}} </span> 
+    <span class="distance">{{theater.distance}} </span>
+  </div>
+  <div>
+    <ion-grid>
+      <ion-row >
+        <ion-col *ngFor="let show of theater.data">
+          <ion-button [style.color]="color" (click)="navigate(i)"
+           class="buttonStyle" 
+          fill="clear">{{show.time}}</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>
+  </div>
+
+<ion-footer>
+  <ion-toolbar class="footerBar">
+    <div>
+      <img src="../assets/icon/calendar.svg" class="cal">
+    <span class="date">Today, 14 NOV </span> 
+    <img src="../assets/icon/down.svg" class="downA">
+      <span class="movieType">Tamil, 3D</span>
+      <img src="../assets/icon/down.svg" class="downA">
+    </div>
+
+  </ion-toolbar>
+</ion-footer>
+</ion-content>

@@ -1,1 +1,166 @@
+::-webkit-scrollbar {
+  width: 0 !important;
+} //hide scrollbar
+ion-content {
+  text-shadow: 0px 0px 0px 0px;
+}
+ion-header {
+  background: #222539;
+  height: 70px;
+}
+ion-title{
+  padding-inline-end: 10px;
+  padding-top: 10px;
+}
+ion-toolbar {
+
+  height: 70px;
+  color: white;
+  --background: #222539;
+}
+.searchImg {
+  height: 18px;
+  width: 18px;
+  margin-right: 15px;
+  top: 0% !important;
+}
+.notification {
+  height: 18px;
+  width: 18px;
+}
+.profileImg {
+  float: left;
+  // margin-top: 10px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+.profileName {
+  margin-left: 10px;
+  font-family: "Poppins-SemiBold" !important;
+  padding-top: 20px !important;
+  font-size: 15px;
+}
+.location {
+  margin-left: 10px;
+  font-family: "Poppins-Regular" !important;
+  color: #ffffffc4;
+  font-size: 11px;
+  height: 23px;
+}
+.slideImg {
+  height: 150px;
+}
+.seatC {
+  font-size: 14px;
+  margin-left: 20px;
+  font-family: "Poppins-Medium" !important;
+}
+.optionSlide {
+  font-size: 13px;
+  color: #707070;
+  padding-left: 10px;
+  height: 100px;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
+  //   display: inline-block;
+}
+.optionSlide .slide {
+  height: 80px;
+  width: 50px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  text-align: center;
+}
+.optImg {
+  text-align: center;
+  height: 45px;
+  width: 50px !important;
+}
+.moviesSlide {
+  font-size: 13px;
+  color: #707070;
+  padding-left: 10px;
+  height: 210px;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
+  display: inline-block;
+}
+.moviesSlide .moviesBlock {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #707070;
+  padding-left: 10px;
+  height: 160px;
+  width: 100px;
+  height: 150px;
+  margin-right: 10px;
+
+  display: inline-block;
+}
+.movieImg {
+  height: 124px;
+  width: 93px;
+}
+.movieName {
+  font-family: "Poppins-Regular" !important;
+  overflow: hidden;
+  margin-top: 5px;
+  text-align: center;
+  width: 100px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #333333 !important;
+  font-size: 12px;
+}
+.like {
+  height: 14px;
+  width: 14px;
+}
+.likeVal {
+  font-weight: lighter !important;
+  margin-bottom: 3px !important;
+  color: #707070;
+  font-size: 11px;
+}
+.map {
+  margin-top: 10px;
+  height: 150px;
+  width: 320px;
+}
+.view {
+  float: right;
+  font-size: 12px;
+  color: #e81667;
+}
+.eventSlide {
+  font-size: 13px;
+  color: #707070;
+  padding-left: 10px;
+  height: 240px;
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
+  display: inline-block;
+}
+.eventSlide .eventsBlock {
+  margin-top: 8px;
+  font-size: 13px;
+  // color: #707070;
+  padding-left: 10px;
+  height: 200px;
+  width: 100px;
+  margin-right: 10px;
+  display: inline-block;
+}
+.title {
+  font-size: 14px;
+  font-family: "Poppins-Medium" !important;
+}
 

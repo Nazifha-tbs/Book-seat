@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar>
+
+    <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/theater-list']">
+    <ion-title class="title">Black Panther
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="height: 100%;">
+    <div class="list">
+      <div>
+        <span class="theaterName">
+          {{name}}
+          <!-- INOX - Prozone mall -->
+        </span>
+        <img src="../assets/icon/information.svg" class="info" >
+        <br>
+        <span class="smallGrey">
+          {{city}}
+        </span>
+        <span class="distance">
+          {{distance}}
+        </span>
+      </div>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let i of dataTime">
+              <ion-button class="buttonStyle" fill="clear">
+                {{i.time}}
+              </ion-button>
+            </ion-col>
+
+
+          </ion-row>
+
+        </ion-grid>
+      </div>
+
+    </div>
+    <div class="seatDiv">
+      <span>
+        How many seats ?
+      </span>
+      <br>
+      <div style="text-align: center">
+        <img src="../assets/icon/vespa.svg" class="vehicle">
+        <div class="oval"></div>
+      </div>
+
+      <div style="margin-top: 20px;margin-bottom: 25px;display: inline-block" *ngFor="let number of seat">
+        <button fill="clear" Size="small" class="numberBtn" (click)="toggleClass(number)" 
+    [ngClass]="{'active': number.active}">{{number.no}}</button>
+       
+      </div>
+
+      <div style="margin-top: 15px;text-align: center">
+        <button 
+       [ngClass]="{'activated': rate.activated}"
+         (click)="selectedRate(i)"  
+         *ngFor="let rate of seats;let i = index;" fill="clear" class="seatRate">
+          <div>
+            <span class="lightFont">{{rate.type}}</span>
+            <br>
+            <br>
+            <span>{{rate.value}}</span>
+            <br>
+            <br>
+            <br>
+            <span class="fill">
+             {{rate.availability}}
+            </span>
+          </div>
+        </button>
+        
+      </div>
+
+
+    </div>
+    <div style="background: white !important;bottom: 0% !important;padding: 0%;
+    margin: 0%;">
+      <ion-button class="bookSeat" fill="clear">
+        <span>
+          Select seat
+        </span>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
