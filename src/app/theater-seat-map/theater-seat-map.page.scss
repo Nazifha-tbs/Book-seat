@@ -1,0 +1,160 @@
+ion-content {
+  font-family: "Poppins-Regular" !important;
+  --background: #f5f5fa;
+}
+ion-title {
+  padding-left: 15px;
+  padding-top: 3px;
+  font-size: 14px;
+}
+ion-button {
+  width: 90px;
+}
+.header{
+    font-family: "Poppins-Regular" !important;
+    --background: #222539;
+    background: #222539;
+    color: white;
+}
+.footer {
+    text-align: center;
+  height: 50px;
+  bottom: 0%;
+  position: fixed;
+  --background: #E81667 !important;
+  color: white;
+}
+ion-col {
+  padding-inline-start: var(--ion-grid-column-padding-xs, var(--ion-grid-column-padding, 0px));
+  padding-inline-end: var(--ion-grid-column-padding-xs, var(--ion-grid-column-padding, 0px));
+  padding-top: var(--ion-grid-column-padding-xs, var(--ion-grid-column-padding, 0px));
+  padding-bottom: var(--ion-grid-column-padding-xs, var(--ion-grid-column-padding, 0px));
+  --padding: 0px !important;
+  height: fit-content;
+}
+.list{
+    padding: 10px;
+    background: white;
+}
+.back {
+  margin-left: 10px;
+  float: left;
+  height: 25px;
+  width: 20px;
+}
+.seatsT{
+    margin-right: 13px;
+    color: white;
+    font-size: 13px;
+    float: right;
+}
+.address{
+    margin-left: 10px;
+    font-size: 11px;
+    color: #aaaaaa;
+}
+.theaterName {
+  color: #222539;
+}
+.info {
+  margin-top: 8px;
+  margin-right: 8px;
+  float: right;
+}
+.smallGrey {
+    margin-left: 9px;
+  color: #666666;
+  font-size: 11px;
+  font-family: "Poppins-Regular";
+}
+.distance {
+  color: #333333;
+  font-size: 11px;
+  margin-left: 5px;
+}
+.buttonActive {
+    border-radius: 4px;
+  color:  #fcfcfc;
+  background: #2ec492 !important;
+  border: 1px solid #e5e5e5;
+}
+.buttonStyle {
+    border-radius: 4px;
+  color: #eb8d2f;
+  background: #fcfcfc !important;
+  border: 1px solid #e5e5e5;
+}
+.buttonInactive {
+  color: #e5e5e5;
+  background: #fcfcfc !important;
+  border: 1px solid #e5e5e5;
+}
+.seatBtn {
+  border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  border: 0.5px solid #aaaaaa;
+  font-size: 15px;
+  color: #666666;
+  background: #f0efef;
+}
+.blankBtn {
+  text-align: center !important;
+  color: #999999 !important;
+  font-size: 11px !important;
+  font-family: "Poppins-Regular" !important;
+  border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  border: 0.5px solid white;
+  font-size: 15px;
+  color: white;
+  background: white;
+}
+.rowBtn {
+  text-align: center !important;
+  color: #999999 !important;
+  font-size: 11px !important;
+  font-family: "Poppins-Regular" !important;
+  border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  border: 0.5px solid white;
+  font-size: 15px;
+  color: #666666;
+  background: white;
+}
+.price{
+    margin-left: 14px;
+    color: #333333;
+    font-size: 12px;
+}
+.availableSeat {
+  border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  border: 0.5px solid #aaaaaa;
+  font-size: 15px;
+  color: #666666;
+  //   margin-right: 2px;
+  //   margin-left: 3px;
+  background: white;
+}
+button.active {
+  border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  font-size: 15px;
+  border: 0px;
+  color: white;
+  background: #2ec492;
+}
+.seatDiv {
+  padding: 10px;
+  margin-top: 20px;
+  background: white;
+  --background: white;
+  width: 100%;
+  height: fit-content;
+  max-height: 250px;
+}

@@ -1,0 +1,73 @@
+ion-content{
+    font-family: 'Poppins-Regular' !important;
+}
+button :focus, button :active{
+outline: none !important;
+}
+button::-moz-focus-inner { border: 0; }
+
+ion-item{
+    --padding-top:8px;
+     --padding-bottom:8px;
+      --padding-start: 0px !important;
+    padding: 0%;
+}
+ion-label{
+    
+    // height: 26px;
+      --padding-start: 16px;
+}
+.date{
+    padding-left: 16px;
+    color: #000000;
+    font-size: 14px;
+}
+.dateBtn {
+  border-radius: 5px;
+  height: 32px;
+  width: 32px;
+  font-size: 14px;
+  color: #666666;
+  margin-right: 2px;
+  background:#F8F8F8;
+}
+.dayBtn {
+    text-shadow: 0px;
+       font-weight: lighter;
+    outline: none !important;
+  border-radius: 5px;
+  height: 32px;
+  width: 32px;
+  font-size: 15px;
+  color: #999999;
+  margin-right: 2px;
+  background:white;
+}
+button.active {
+padding: 0%;
+
+    outline: none !important;
+  border-radius: 5px;
+  height: 32px;
+  width: 32px;
+  font-size: 13px;
+  margin-right: 2px;
+  color: white;
+  background: #E81667;
+}
+.week{
+     text-shadow: 0px;
+    font-weight: lighter;
+    color: #999999;
+    font-size: 10px;
+}
+.blank{
+    width: 43.75px;
+    height: 42px;
+
+}
+.today{
+    --padding-top:0%;
+    font-size: 7px;
+    color: white;
+}

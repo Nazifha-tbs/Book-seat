@@ -1,9 +1,61 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>CalendarModal</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+<ion-item>
+  <ion-label class="date">
+{{today | date:'EEEE, MMM dd, yyyy'}}
+  </ion-label>
+</ion-item>
+<div>
+  <div>
+    
+  </div>
+</div>
+<div>
+  <ion-grid >
+    <ion-row>
+      <ion-col class="blank">
+        
+      </ion-col>
+      <ion-col *ngFor="let day of week">
+      <button fill="clear" Size="small" class="dayBtn">
+        {{day.day}}
+      
+      </button>
+      </ion-col>
+      
+      </ion-row>
+      <ion-row>
+        <ion-col class="week">
+          This week
+        </ion-col>
+        <!-- [ngClass]="{'active': date.active}" -->
+        <ion-col  *ngFor="let dates of thisWeek;let i = index">
+          <button fill="clear" Size="small" class="dateBtn" 
+          [ngClass]="{'active': dates.active}"
+           (click)="toggleClass(dates)">
+          <span class="today"> {{dates.currentDay}}</span> 
+          
+    {{dates.date}}
+  
+  </button>
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        <ion-col class="week">
+          Next week
+        </ion-col>
+        <ion-col  *ngFor="let dates of nextWeek">
+          <button fill="clear"
+          [ngClass]="{'active': dates.active}"
+           (click)="toggleClass(dates)"
+          Size="small" class="dateBtn">
+            {{dates.date}}
+            
+          </button>
+        </ion-col>
+       
+      </ion-row>
+  </ion-grid>
 
+</div>
 </ion-content>

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   {
     path: 'theater-list',
@@ -19,6 +19,30 @@ const routes: Routes = [
   {
     path: 'calendar-modal',
     loadChildren: () => import('./calendar-modal/calendar-modal.module').then( m => m.CalendarModalPageModule)
+  },
+  {
+    path: 'seat-type-modal',
+    loadChildren: () => import('./seat-type-modal/seat-type-modal.module').then( m => m.SeatTypeModalPageModule)
+  },
+  {
+    path: 'theater-seat-map',
+    loadChildren: () => import('./theater-seat-map/theater-seat-map.module').then( m => m.TheaterSeatMapPageModule)
+  },
+  {
+    path: 'payment-modal',
+    loadChildren: () => import('./payment-modal/payment-modal.module').then( m => m.PaymentModalPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'nearby-theater',
+    loadChildren: () => import('./nearby-theater/nearby-theater.module').then( m => m.NearbyTheaterPageModule)
+  },
+  {
+    path: 'movies-list',
+    loadChildren: () => import('./movies-list/movies-list.module').then( m => m.MoviesListPageModule)
   },
 ];
 

@@ -1,0 +1,65 @@
+ion-content{
+    z-index: 1000;
+   --background: #ccc url("../../assets/img/map.png") no-repeat center center / cover;
+   
+}
+.back{
+    margin-top: 16px;
+    height: 25px;
+    width: 40px;
+    float: left;
+    margin-left: 16px;
+}
+// ::-webkit-scrollbar {
+//    overflow: hidden;
+   
+// }
+.btnDiv{
+    
+    padding-left: 10px;
+    height: 55px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: auto;
+}
+ .btnDiv .btnDiv2{
+     margin-right: 10px; 
+    width: 90px;
+    height: 45px;
+        display: inline-block !important;
+}
+.btnStyle{
+ text-transform:none!important;
+   text-align: center;
+    width: 90px;
+    height: 45px;
+    font-size: 12px !important;
+    border-radius: 8px;
+    background: #FCFCFC;
+    border: 0.5px solid #E5E5E5;
+    color: #999999 !important;
+}
+button.active{
+   text-align: center;
+    width: 90px;
+    height: 45px;
+    font-size: 12px !important;
+    border-radius: 8px;
+    background: #E81667;
+    color: white !important;
+}
+.theater{
+    border-radius: 10px;
+    height: 90px;
+    width: 90px;
+}
+.theaterName{
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+}
+.smallFont{
+    font-size: 12px;
+    color: #999999;    
+    font-weight: lighter;
+}

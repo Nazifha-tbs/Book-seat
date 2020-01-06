@@ -36,5 +36,33 @@
   display: block;
   --background: transparent;
 }
+.calendar-modal-css .modal-wrapper {
+  height: 37%;
+  top: 63%;
+  bottom: 0%;
+  left: 0%;
+  position: absolute;
+  display: block;
+  --background: transparent;
+}
+.seat-modal-css .modal-wrapper {
+  height: 25%;
+  top: 75%;
+  bottom: 0%;
+  left: 0%;
+  position: absolute;
+  display: block;
+  --background: transparent;
+}
+.payment-modal-css .modal-wrapper {
+  height: 35%;
+  top: 65%;
+  bottom: 0%;
+  left: 0%;
+  position: absolute;
+  display: block;
+  --background: transparent;
+}
+
 
 

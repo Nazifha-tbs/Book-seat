@@ -1,0 +1,31 @@
+ion-item{
+
+    --padding-start: 0%;
+}
+.lang{
+    color: black;
+    background: white;
+    --background: white;
+    height: 20px;
+    width: 85px;
+}
+.type{
+    margin-right: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+   color: #666666;
+    background: #F8F8F8 !important;
+    --background: #F8F8F8 !important;
+    height: 32px;
+    width: 85px; 
+}
+.button.active{
+    margin-right: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+   color: white;
+    background: #E81667 !important;
+    --background: #E81667 !important;
+    height: 32px;
+    width: 85px; 
+}

@@ -16,7 +16,7 @@ export class SeatSelectionPage implements OnInit {
 
 
 
-  constructor(
+  constructor(private router : Router,
    
     private route: ActivatedRoute
   ) {
@@ -40,7 +40,8 @@ export class SeatSelectionPage implements OnInit {
 
     // console.log(this.route.queryParams.subscribe(this.listData));
   }
-  seat: any[] = [{
+  seat: any[] = [
+    {
 
     no: 1,
     active: false
@@ -148,5 +149,9 @@ export class SeatSelectionPage implements OnInit {
 
 
 
+  }
+
+  navigate(){
+    this.router.navigate(['/theater-seat-map'])
   }
 }

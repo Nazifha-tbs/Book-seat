@@ -40,10 +40,11 @@
   <ion-toolbar class="footerBar">
     <div>
       <img src="../assets/icon/calendar.svg" class="cal">
-    <span class="date">Today, 14 NOV </span> 
-    <img src="../assets/icon/down.svg" class="downA">
-      <span class="movieType">Tamil, 3D</span>
-      <img src="../assets/icon/down.svg" class="downA">
+    <span class="date">Today, {{today | date:'dd MMM '}}</span> 
+    <img src="../assets/icon/down.svg" class="downA" (click)="openCal()">
+
+      <span class="movieType">{{lang}} {{type}}</span>
+      <img src="../assets/icon/down.svg" class="downA" (click)="seat()">
     </div>
 
   </ion-toolbar>

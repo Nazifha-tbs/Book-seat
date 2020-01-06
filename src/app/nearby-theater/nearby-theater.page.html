@@ -1,0 +1,48 @@
+<ion-content>
+  <div>
+    <img src="../assets/icon/blackarrow.svg" class="back" [routerLink]="['/home']">
+
+  </div>
+<div style="
+height: 20%;margin-top: 40% !important;  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, 
+     rgba(255, 255, 255, 0) 13.5%,
+      rgba(255, 255, 255, 0) 33.33%, rgb(255, 255, 255) 100%) !important;">
+
+</div>
+<div style="background: white;height: max-content">
+<div  class="btnDiv">
+  <div *ngFor="let item of distance" class="btnDiv2">
+<ion-button fill="clear" class="btnStyle">
+  {{item.value}}
+</ion-button>
+  </div>
+  
+</div>
+
+<div style="padding: 16px;height: 110px;" *ngFor="let item of list">
+<div style="float: left;width: 90px;" class="theater">
+  <img src="{{item.img}}" class="theater" >
+</div>
+
+<div style="padding-top: 10px;padding-left: 100px !important;">
+<ion-label class="theaterName">
+  {{item.name}}
+  <!-- Arasan Cinemas A/C 2K Dolby -->
+</ion-label>
+<br>
+
+<ion-label class="smallFont">
+  <!-- Coimbatore -->
+  {{item.city}}
+</ion-label>
+<br>
+<span style="color: #E81667"> ★ </span ><span class="smallFont"> 
+  <!-- 5 star --> {{item.rating}}
+</span>
+
+</div>
+</div>
+
+
+</div>
+</ion-content>

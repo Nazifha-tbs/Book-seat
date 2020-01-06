@@ -1,0 +1,17 @@
+<ion-content >
+<ion-item >
+  <div *ngFor="let lang of seat" style="display: inline-block;padding-left: 10px;">
+<ion-button class="lang" [ngClass]="{'active' : lang.active}"  fill="clear" (click)="selectedL(lang)">{{lang.language}}</ion-button>
+  </div>
+  
+
+</ion-item>
+<div *ngFor="let type of seats" style="display: inline-block;padding-left: 10px;">
+<ion-button [ngClass]="{'active' : type.active}" 
+(click)="selectedT(type)" class="type" fill="clear">
+{{type.D}}</ion-button>
+
+</div>
+
+
+</ion-content>

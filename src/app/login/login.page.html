@@ -1,0 +1,75 @@
+<ion-content>
+  <div style="margin-top:8%;width: 200px;text-align:center;margin-left: 25%;">
+    <div style="float: left;">
+      <img src="../assets/icon/coupon.svg" class="logo">
+    </div>
+    <div style="padding-top: 15px;margin-right:25px;">
+      <span class="title">
+        BOOK SEAT
+      </span>
+      <br>
+      <span class="quote">
+        your seat, your rights
+      </span>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 20px;">
+    <span class="title">
+      Welcome Buddies,
+    </span>
+    <br>
+    <span class="quote">
+      Login to book your seat, I said its your seat
+    </span>
+  </div>
+  <div class="cardDiv">
+    <ion-card class="loginCard">
+      <span class="loginT">
+        Login to your account
+      </span>
+
+      <div>
+        <br>
+        <br>
+        <ion-input class="inputStyle" placeholder="Username">
+        </ion-input>
+        <br>
+        <ion-input class="inputStyle" placeholder="Password">
+        </ion-input>
+
+
+      </div>
+      <div>
+        <span class="forgot">
+          Forgot Password ?
+        </span>
+
+      </div>
+      <ion-button [routerLink]="['/home']" size="large" expand="full" fill="clear" class="loginBtn">
+        LOGIN
+      </ion-button>
+      <div style="margin-top: 25px;">
+        <div class="divider">
+
+        </div> <span class="Or"> or </span>
+        <div class="divider">
+
+        </div>
+      </div>
+      <div style="margin-top: 25px;">
+        <ion-button fill="clear" class="googleBtn">
+          <img src="../assets/icon/google.svg" class="icon"> <span>Google</span>
+        </ion-button>
+        <ion-button fill="clear" class="fbBtn">
+          <img src="../assets/icon/facebook.svg" class="icon"> <span>Facebook</span>
+        </ion-button>
+      </div>
+    </ion-card>
+  </div>
+
+<div style="bottom: 0%;margin-top: 45px">
+  <span class="account">Don’t have an account ? </span><span class="Sign"><u>Sign up</u> here.</span>
+</div>
+</ion-content>

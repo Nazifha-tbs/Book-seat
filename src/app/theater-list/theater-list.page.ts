@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { NavController, ModalController } from '@ionic/angular';
 import { InfoModalPageModule } from '../info-modal/info-modal.module';
 import { InfoModalPage } from '../info-modal/info-modal.page';
+import { CalendarModalPage } from '../calendar-modal/calendar-modal.page';
+import { SeatTypeModalPage } from '../seat-type-modal/seat-type-modal.page';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-theater-list',
@@ -10,6 +13,10 @@ import { InfoModalPage } from '../info-modal/info-modal.page';
   styleUrls: ['./theater-list.page.scss'],
 })
 export class TheaterListPage implements OnInit {
+  dataSeat: any;
+  lang: any ;
+  type: any ;
+  today: string;
   lists: any[] = [{
     name: " Arasan Cinemas A/C 2K Dolby",
     city: "Narobi",
@@ -74,11 +81,17 @@ export class TheaterListPage implements OnInit {
     }]
 
   }]
-  constructor(private modalCtrl: ModalController,private router: Router,
+
+  constructor(private modalCtrl: ModalController, private router: Router,
     public navCtrl: NavController
   ) { }
 
   ngOnInit() {
+    this.today = new Date().toString();
+    if (this.lang == undefined) {
+
+      this.lang = "Select type";
+    }
   }
   navigate(index: any) {
     var listData = this.lists[index];
@@ -98,14 +111,64 @@ export class TheaterListPage implements OnInit {
   }
   // Show modal
   async openModal(index) {
-    
+
     const modal = await this.modalCtrl.create({
       component: InfoModalPage,
       cssClass: 'theater-info-modal-css',
-      componentProps: { info : this.lists[index] }
+      componentProps: { info: this.lists[index] }
 
 
     });
     return await modal.present();
+  }
+
+  //calendar
+  async openCal() {
+
+    const modal1 = await this.modalCtrl.create({
+      component: CalendarModalPage,
+      cssClass: 'calendar-modal-css'
+      // componentProps: { info: this.lists[index] }
+
+
+    });
+    return await modal1.present();
+  }
+
+  //seat
+  async seat() {
+
+    const modal2 = await this.modalCtrl.create({
+      component: SeatTypeModalPage,
+      cssClass: 'seat-modal-css',
+      componentProps: { lang: this.lang, type: this.type }
+      
+    });
+
+    // // Get returned data
+    modal2.onDidDismiss()
+      .then(data => {
+        this.type = '';
+        this.lang = '';
+        if (this.lang == undefined) {
+
+          this.lang = "Select type";
+        }
+        if (localStorage.selectedT != undefined) {
+
+          this.type = localStorage.getItem('selectedT');
+
+          localStorage.removeItem('selectedT');
+        }
+        
+
+        if (localStorage.selectedL != undefined) {
+
+          this.lang = localStorage.getItem('selectedL');
+          localStorage.removeItem('selectedL');
+        }
+      });
+
+    return await modal2.present();
   }
 }

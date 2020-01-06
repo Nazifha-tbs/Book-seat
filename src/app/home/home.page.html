@@ -5,7 +5,7 @@
         <img src="../assets/img/profile2.png" class="profileImg">
         <div style="float: right;margin-top: 10px;">
           <img src="../assets/icon/searchzoom.svg" class="searchImg">
-          <img src="../assets/icon/notification.svg" class="notification">
+          <img src="../assets/icon/notification.svg" class="notification" [routerLink]="['/login']">
         </div>
         <span class="profileName">
           Felicity Smoak
@@ -88,7 +88,7 @@
       IN THEATERS
     </ion-text>
     <div class="moviesSlide">
-      <div class="moviesBlock">
+      <div class="moviesBlock" [routerLink]="['/movies-list']">
         <div>
           <img class="movieImg" src="../assets/img/images.png">
           <br>
@@ -160,7 +160,7 @@
       <ion-label class="title">
         NEARBY THEATERS
       </ion-label>
-      <ion-label class="view">
+      <ion-label class="view" [routerLink]="['/nearby-theater']">
         View all
       </ion-label>
     </div>
