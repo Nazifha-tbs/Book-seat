@@ -1,18 +1,30 @@
 <ion-header>
   <ion-toolbar class="header">
 
-    <img src="../assets/icon/backWhite.svg" class="back" 
-    [routerLink]="['/seat-selection']">
-  
-    <ion-title>Black Panther
+    <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/seat-selection']">
+
+    <ion-title>
+      <div style="float: left;">
+
+        <span class="title">
+         {{movie}}
+        </span>
+        <div class="address">
+          <span class="address">
+            Arasan Cinemas A/C 2K Dolbyk
+          </span>
+        </div>
+
+      </div>
+      <div style=" float: right">
+        <ion-label class="seatsT">
+          {{no}} seats
+        </ion-label>
+      </div>
     </ion-title>
-      <ion-label class="seatsT">
-        2 seats
-      </ion-label>
-    <ion-label class="address">
-      Arasan Cinemas A/C 2K Dolbyk
-    </ion-label>
-   
+
+
+
   </ion-toolbar>
 </ion-header>
 
@@ -26,506 +38,70 @@
       </div>
       <div>
         <ion-grid>
-          <ion-row>
-            <ion-col >
+          
+            <ion-col>
               <ion-button class="buttonActive" fill="clear">
-              10:00 AM
+                10:00 AM
               </ion-button>
             </ion-col>
 
-<ion-col >
-  <ion-button class="buttonStyle" fill="clear">
-    1:30 PM
-  </ion-button>
-</ion-col>
-<ion-col >
-  <ion-button class="buttonStyle" fill="clear">
-  6:30 PM
-  </ion-button>
-</ion-col>
-          </ion-row>
+            <ion-col>
+              <ion-button class="buttonStyle" fill="clear">
+                1:30 PM
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button class="buttonStyle" fill="clear">
+                6:30 PM
+              </ion-button>
+            </ion-col>
+       
 
         </ion-grid>
       </div>
 
     </div>
-   
-<div class="seatDiv">
-  <div>
-    <span class="price" >$ 80.0 JACK</span>
-  </div>
-<ion-grid>
-  <ion-row>
-    <ion-col class="rowBtn">
-      A
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"> </button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"> </button>
-    </ion-col>
+    <div class="arc">
+      <img src="../assets/icon/arc.svg" class="arcImg">
 
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"> </button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"> </button>
-    </ion-col>
-    
+    </div>
+    <div *ngFor=" let button of seats;let k = index;"
+     class="{{button.cssClass}}">
+      <span class="price"> {{curr}} {{button.value}} {{button.type}}</span>
+      <div>
+        <ion-grid>
+          <ion-row *ngFor="let row of button.data1;let j = index;" >
+            <ion-col class="rowBtn">
+              {{row.row}}
+            </ion-col>
+            <ion-col *ngFor="let btn of row.data;let i = index">
+              <button fill="clear" class="{{btn.cssClass}}" (click)="selected(i,j,k)"></button>
+            </ion-col>
+          </ion-row>
 
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"> </button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"> </button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"> </button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"> </button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"> </button>
-    </ion-col>
-
-  </ion-row>
+        </ion-grid>
 
 
-  <ion-row>
-    <ion-col class="rowBtn">
-     B
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-  
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-    </ion-col>
-  
-  
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-  
-  </ion-row>
 
+      </div>
 
-  <ion-row>
-  <ion-col class="rowBtn">
-    C
-  </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-  
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-    </ion-col>
-  
-  
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-  
-  </ion-row>
-
-  <ion-row>
-      <ion-col class="rowBtn">
-        D
-      </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-  
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-    </ion-col>
-  
-  
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-  
-  </ion-row>
-
-  <ion-row>
-    <ion-col class="rowBtn">
-     E
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-  
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" disabled="true" class="availableSeat"></button>
-    </ion-col>
-  
-  
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="availableSeat"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-    <ion-col>
-      <button fill="clear" Size="small" class="seatBtn"></button>
-    </ion-col>
-  
-  </ion-row>
-</ion-grid>
-</div>
-
-<div class="seatDiv">
-  <div>
-    <span class="price">$ 100.0 QUEEN</span>
-  </div>
-  <ion-grid>
-    <ion-row>
-      <ion-col class="rowBtn">
-        F
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"> </button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"> </button>
-      </ion-col>
-
-      <ion-col>
-        <button fill="clear" disabled="true" Size="small" class="blankBtn"> </button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" disabled="true" Size="small" class="blankBtn"> </button>
-      </ion-col>
-
-
-      <ion-col>
-        <button fill="clear" Size="small" class="active"> </button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="active"> </button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"> </button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"> </button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"> </button>
-      </ion-col>
-
-    </ion-row>
-
-
-    <ion-row>
-      <ion-col class="rowBtn">
-       G
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-
-      <ion-col>
-        <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" disabled="true" class="blankBtn"></button>
-      </ion-col>
-
-
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-
-    </ion-row>
-
-
+    </div>
    
 
-    <ion-row>
-      <ion-col class="rowBtn">
-        H
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-
-
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
-</div>
-<div class="seatDiv">
-  <div>
-    <span class="price">$ 120.0 KING</span>
   </div>
-  <ion-grid>
- 
 
-    <ion-row>
-      <ion-col class="rowBtn">
-       I
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="seatBtn"></button>
-      </ion-col>
-
-      <ion-col>
-        <button fill="clear" disabled="true" Size="small" class="blankBtn"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" disabled="true" Size="small" class="blankBtn"></button>
-      </ion-col>
-
-
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-
-    </ion-row>
-
-
-
-
-    <ion-row>
-      <ion-col class="rowBtn">
-      J
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-
-
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-      <ion-col>
-        <button fill="clear" Size="small" class="availableSeat"></button>
-      </ion-col>
-
-    </ion-row>
-  </ion-grid>
-</div>
-
-
-  </div>
- 
 </ion-content>
 
 <ion-footer (click)="openModel()">
   <ion-toolbar class="footer">
- 
-      
-       
-          <span>
-            Pay $ 200.0
-          </span>
-       
-     
-    
+
+
+
+    <span>
+  {{finalValue}}
+    </span>
+
+
+
   </ion-toolbar>
 </ion-footer>

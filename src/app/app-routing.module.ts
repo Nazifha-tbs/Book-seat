@@ -44,6 +44,14 @@ const routes: Routes = [
     path: 'movies-list',
     loadChildren: () => import('./movies-list/movies-list.module').then( m => m.MoviesListPageModule)
   },
+  {
+    path: 'movie-details',
+    loadChildren: () => import('./movie-details/movie-details.module').then( m => m.MovieDetailsPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
 ];
 
 @NgModule({

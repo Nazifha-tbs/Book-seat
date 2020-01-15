@@ -1,0 +1,160 @@
+<ion-content>
+
+  <div class="movieImg">
+    <div style="width: 100%;text-align: start">
+      <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/movies-list']">
+    </div>
+
+
+    <img src="../assets/icon/video.svg" class="playBtn">
+  </div>
+
+  <div class="detailDiv">
+    <div>
+
+      <span class="movieName">
+        {{movieName}}
+      </span>
+
+      <span class="rating">
+        {{rating}}
+      </span>
+      <img src="../assets/icon/like.svg" class="like">
+    </div>
+    <br>
+    <div class="smallFonts">
+      <span>UA </span>| <span>
+        Oct 15, 2019
+      </span>
+      <span class="votes">
+        1.8k votes
+      </span>
+    </div>
+    <br>
+    <br>
+    <div class="type">
+      <span>Tamil</span>
+      <button fill="clear" class="btn">3D</button>
+      <button fill="clear" class="btn">2D</button>
+    </div>
+    <br>
+
+    <div>
+      <img src="../assets/icon/clock.svg" class="smallImg">
+      <span class="extraSmall">2h 59m </span>
+      <img src="../assets/icon/mask.svg" class="smallImg">
+      <span class="extraSmall">Action, Drama </span>
+    </div>
+  </div>
+
+  <div class="offerDiv">
+    <span class="offerF">
+      Your offers
+    </span>
+    <div class="scrollingOffer">
+      <div class="offerCard">
+        <div class="giftBG">
+          <img src="../assets/icon/gift.svg" class="gift">
+        </div>
+
+        <div class="detailOffer">
+          <span class="title">
+            Wait ! Grab FREE reward
+          </span>
+          <br>
+          <span class="detailText">
+            Book your seats and tap on the reward box to claim it.
+          </span>
+        </div>
+      </div>
+
+
+      <div class="offerCard">
+        <div class="giftBG">
+          <img src="../assets/icon/gift.svg" class="gift">
+        </div>
+
+        <div class="detailOffer">
+          <span class="title">
+            Wait ! Grab FREE reward
+          </span>
+          <br>
+
+          <span class="detailText">
+            Book your seats and tap on the reward box to claim it.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="review">
+    <div>
+      <span class="offerF">1,403 reviews</span>
+      <span class="write">Write yours ></span>
+    </div>
+    <div style="display: inline-block;width: 100%;margin-top: 5px;">
+      <div style="height: 28px;margin-top: 5px;float: left;width: 23px;">
+        <img src="../assets/img/reviewprofile.png" class="profile">
+
+      </div>
+      <div>
+        <div>
+          <span class="profileName">Mokka mohan</span>
+          <span class="date">
+            Nov 7, 2019
+          </span>
+        </div>
+        <div style="margin-left: 25px;font-size: 11px;color: #666666;margin-top: 3px;">
+          With all the updates after the last few months the app has improved a lot.
+          Keeps me up to date.
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="castDiv">
+    <div>
+      <span class="offerF">Crews & Casts</span>
+      <span class="write">View all ></span>
+    </div>
+    <div class="slide">
+      <div class="slider">
+      <img src="../assets/img/cast1.png" class="castImg">
+      <br> 
+      <span class="castName">chadwick</span>
+      </div>
+
+      <div class="slider">
+        <img src="../assets/img/cast2.png" class="castImg">
+        <br>
+        <span class="castName">Letitia Wright</span>
+      </div>
+
+      <div class="slider">
+        <img src="../assets/img/cast3.png" class="castImg">
+        <br>
+        <span class="castName">B. Jordan</span>
+      </div>
+
+      <div class="slider">
+        <img src="../assets/img/cast4.png" class="castImg">
+        <br>
+        <span class="castName">Lupita Nyong</span>
+      </div>
+
+    </div>
+  </div>
+</ion-content>
+<ion-footer (click)="navigate()">
+  <ion-toolbar>
+    <ion-title class="footer">
+      <img src="../assets/icon/armchair.svg" class="chair">
+
+      Book seats
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

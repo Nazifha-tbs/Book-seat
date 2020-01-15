@@ -4,16 +4,21 @@
 ion-content {
   text-shadow: 0px 0px 0px 0px;
 }
+img,
+div,
+button,
+ion-label {
+  outline: none;
+}
 ion-header {
   background: #222539;
   height: 70px;
 }
-ion-title{
+ion-title {
   padding-inline-end: 10px;
   padding-top: 10px;
 }
 ion-toolbar {
-
   height: 70px;
   color: white;
   --background: #222539;
@@ -29,6 +34,7 @@ ion-toolbar {
   width: 18px;
 }
 .profileImg {
+  // margin-top: 8px;
   float: left;
   // margin-top: 10px;
   height: 48px;
@@ -42,15 +48,25 @@ ion-toolbar {
   padding-top: 20px !important;
   font-size: 15px;
 }
+.profileDiv {
+  // margin-top: 11px;
+  height: 28px;
+}
 .location {
+  opacity: 0.7;
   margin-left: 10px;
   font-family: "Poppins-Regular" !important;
   color: #ffffffc4;
   font-size: 11px;
-  height: 23px;
+  // height: 23px;
 }
 .slideImg {
   height: 150px;
+  width: 100% !important;
+}
+.slideImgs {
+  height: 120px;
+  width: 100% !important;
 }
 .seatC {
   font-size: 14px;
@@ -69,8 +85,7 @@ ion-toolbar {
 }
 .optionSlide .slide {
   height: 80px;
-  width: 50px;
-
+  width: 55px;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 10px;
@@ -78,9 +93,10 @@ ion-toolbar {
   text-align: center;
 }
 .optImg {
+  padding-left: 10px;
   text-align: center;
   height: 45px;
-  width: 50px !important;
+  width: 55px !important;
 }
 .moviesSlide {
   font-size: 13px;
@@ -120,19 +136,26 @@ ion-toolbar {
   font-size: 12px;
 }
 .like {
+  margin-right: 2px;
   height: 14px;
   width: 14px;
 }
 .likeVal {
+  height: 16px;
+  margin-top: -5px;
   font-weight: lighter !important;
   margin-bottom: 3px !important;
   color: #707070;
   font-size: 11px;
 }
-.map {
+#map {
+  padding-top: 50px;
+  padding-left: 120px;
+  background: #ccc url("../../assets/img/map.png") no-repeat center center / cover;
+  border-radius: 4px;
   margin-top: 10px;
   height: 150px;
-  width: 320px;
+  width: 100%;
 }
 .view {
   float: right;
@@ -163,4 +186,17 @@ ion-toolbar {
   font-size: 14px;
   font-family: "Poppins-Medium" !important;
 }
+// --------------------------------------------------------
+.mapStyle {
+  border-radius: 50%;
 
+  background: radial-gradient(circle, #2ec492 30%, #9bfada 60%, #bbecdc 60%) !important;
+  height: 50px;
+  width: 50px;
+  .chairPink {
+    margin-top: 15px;
+    text-align: center;
+    height: 15px;
+    width: 15px;
+  }
+}

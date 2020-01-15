@@ -1,9 +1,10 @@
 <ion-header>
   <ion-toolbar>
   <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/home']">
-    <ion-title class="title">Black Panther 
-      <img src="../assets/icon/searchzoom.svg" class="searchImg">
-      <img src="../assets/icon/filter.svg" class="searchImg"></ion-title>
+    <ion-title class="title">{{movie}}
+     
+      <img src="../assets/icon/filter.svg" class="notification">
+    <img src="../assets/icon/searchzoom.svg" class="searchImg"></ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -25,9 +26,9 @@
   <div>
     <ion-grid>
       <ion-row >
-        <ion-col *ngFor="let show of theater.data">
-          <ion-button [style.color]="color" (click)="navigate(i)"
-           class="buttonStyle" 
+        <ion-col *ngFor="let show of theater.data;let j = index;" style="height: 40px;width: 100px;">
+          <ion-button  disabled="{{show.disabled}}" (click)="navigate(i,j)"
+           class="{{show.cssClass}}" 
           fill="clear">{{show.time}}</ion-button>
         </ion-col>
       </ion-row>
@@ -40,7 +41,7 @@
   <ion-toolbar class="footerBar">
     <div>
       <img src="../assets/icon/calendar.svg" class="cal">
-    <span class="date">Today, {{today | date:'dd MMM '}}</span> 
+    <span class="date">Today, {{today | date:'dd MMM '}} {{day}} {{mon}} </span> 
     <img src="../assets/icon/down.svg" class="downA" (click)="openCal()">
 
       <span class="movieType">{{lang}} {{type}}</span>

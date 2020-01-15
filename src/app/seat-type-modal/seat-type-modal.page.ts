@@ -11,6 +11,9 @@ import { environment } from 'src/environments/environment';
 export class SeatTypeModalPage implements OnInit {
   langS: any;
   typeS: any;
+ 
+
+
   seat: any[] = [{
     language: "English",
     active: false
@@ -28,7 +31,7 @@ export class SeatTypeModalPage implements OnInit {
     active: false
   }]
   constructor( private navParams: NavParams) { 
-    console.log(navParams);
+
     this.langS = this.navParams.data.lang;
     this.typeS = this.navParams.data.type;
     for (var i = 0; i < this.seat.length; i++) {

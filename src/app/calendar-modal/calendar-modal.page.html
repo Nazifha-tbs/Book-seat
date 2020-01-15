@@ -30,7 +30,7 @@
         <!-- [ngClass]="{'active': date.active}" -->
         <ion-col  *ngFor="let dates of thisWeek;let i = index">
           <button fill="clear" Size="small" class="dateBtn" 
-          [ngClass]="{'active': dates.active}"
+          [ngClass]="{'active': dates.active }"
            (click)="toggleClass(dates)">
           <span class="today"> {{dates.currentDay}}</span> 
           
@@ -46,9 +46,10 @@
         </ion-col>
         <ion-col  *ngFor="let dates of nextWeek">
           <button fill="clear"
-          [ngClass]="{'active': dates.active}"
+          [ngClass]="{'active': dates.active,'current' : dates.current }"
            (click)="toggleClass(dates)"
           Size="small" class="dateBtn">
+          <span class="today"> {{dates.currentDay}}</span>
             {{dates.date}}
             
           </button>

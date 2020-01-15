@@ -4,6 +4,9 @@ ion-content{
 button :focus, button :active{
 outline: none !important;
 }
+button{
+    outline: none;
+}
 button::-moz-focus-inner { border: 0; }
 
 ion-item{
@@ -54,6 +57,18 @@ padding: 0%;
   margin-right: 2px;
   color: white;
   background: #E81667;
+}
+.current{
+  padding: 0%;
+
+    outline: none !important;
+  border-radius: 5px;
+  height: 32px;
+  width: 32px;
+  font-size: 13px;
+  margin-right: 2px;
+  color: white;
+  background:#521e32;
 }
 .week{
      text-shadow: 0px;

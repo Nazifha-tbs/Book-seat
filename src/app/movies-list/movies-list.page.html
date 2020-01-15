@@ -1,42 +1,42 @@
 <ion-header>
   <ion-toolbar class="header">
     <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/home']">
-    <ion-title class="title">Black Panther
-              <div style="float: right;margin-top: 10px;">
-                <img src="../assets/icon/searchzoom.svg" class="searchImg">
-                <img src="../assets/icon/notification.svg" class="notification" [routerLink]="['/login']">
-              </div>
+    <ion-title><span > Movies in Nairobi</span>
+      <div style="float: right;margin-top: 5px;">
+        <img src="../assets/icon/searchzoom.svg" class="searchImg">
+        <img src="../assets/icon/filter.svg" class="notification">
+      </div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
-    <div *ngFor=" let category of buttons;let i = index"
-    
-    style="display: inline-block;text-align: center;height:32px;" >
-      <button  [ngClass]="{'active': category.active}"  fill="clear" class="buttonStyle" (click)="selected(i,category)">
-        {{category.name}}
-        <div class="border"></div>
-      </button>
-      
-    </div>
-  
+
+  <div *ngFor=" let category of buttons;let i = index" style="display: inline-block;text-align: center;height:32px;">
+    <button [ngClass]="{'active': category.active}" fill="clear" class="buttonStyle" (click)="selected(i,category)">
+      {{category.name}}
+      <div class="border"></div>
+    </button>
+
+  </div>
+
 
   <ion-slides #slides (ionSlideDidChange)="slideChanged($index)" scrollbar="true" ng-switch="myVar">
     <ion-slide>
       <ion-grid>
         <ion-row>
-          <ion-col *ngFor="let list of Movies">
-            <div>
-              <img src="{{list.movie}}" class="movieImg">
-              <div style="text-align: start">
+          <ion-col *ngFor="let list of Movies;let i = index">
+            <div  (click)="navigate(i)" style="margin-bottom: 10px;">
+              <div style="height: 200px;">
+                <img src="{{list.movie}}" class="movieImg">
+              </div>
+              <div style="text-align: start;height:14px;  margin-top: 3px;">
                 <ion-label class="movieName">
                   {{list.name}}
                 </ion-label>
               </div>
 
-              <div style="height: 20px;padding-bottom: 5px !important;text-align: start;margin-left: 8px;">
+              <div style="height: 18px;padding-bottom: 5px !important;text-align: start;margin-left:25px;margin-top: 4px;">
                 <img src="../assets/icon/like.svg" class="like">
                 <ion-label class="rating">{{list.rate}}</ion-label>
               </div>

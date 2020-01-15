@@ -10,10 +10,19 @@ import { DatePipe } from '@angular/common';
 export class CalendarModalPage implements OnInit {
   today: any ;
   currentDay : any ;
+  data : any;
+  day : any;
+  previousSelected : any;
+
+  constructor(public datePipe: DatePipe,
+    private modalCtrl: ModalController, 
+    private navParams: NavParams) {
+    // console.log(navParams.get('day'));
+      this.day = navParams.get('day');
+  }
   
-  constructor(public datePipe: DatePipe,private modalCtrl: ModalController, private navParams: NavParams) { }
-  
-  week: any[] = [{
+  week: any[] = 
+  [{
     day: "M"
   },
   {
@@ -35,77 +44,110 @@ export class CalendarModalPage implements OnInit {
     day: "S"
   }]
 
-  thisWeek : any [] = [{
-    date : 29,
+  thisWeek : any [] = 
+  [{
+    date : 13,
     active : false,
     currentDay :""
   },
     {
-      date: 30,
+      date: 14,
       active: false,
-      currentDay: ""
+      currentDay: "",
+      today : false
     },
     {
-      date: 31,
+      date: 15,
       active: false,
-      currentDay: ""
+      currentDay: "",
+      today: false
     },
     {
-      date: 1,
+      date: 16,
       active: false,
-      currentDay: ""
+      currentDay: "",
+      today: false
     },
     {
-      date: 2,
+      date: 17,
       active: false,
-      currentDay: ""
+      currentDay: "",
+      today: false
     },
     {
-      date: 3,
+      date: 18,
       active: false,
-      currentDay: ""
+      currentDay: "",
+      today: false
     },
     {
-      date: 4,
+      date: 19,
       active: false,
-      currentDay: ""
+      currentDay: "",
+      today: false
     }]
   nextWeek: any[] = 
   [{
-    date: 5,
-    active: false
+    date: 20,
+    active: false,
+    current: false,
+    currentDay: ""
   },
   {
-    date: 6,
-    active: false
+    date: 21,
+    active: false,
+    current: false,
+    currentDay: ""
   },
   {
-    date: 7,
-    active: false
+    date: 22,
+    active: false,
+    current: false,
+    currentDay: ""
   },
   {
-    date: 8,
-    active: false
+    date: 23,
+    active: false,
+    today: false,
+    currentDay: ""
   },
   {
-    date: 9,
-    active: false
+    date: 24,
+    active: false,
+    current: false,
+    currentDay: ""
   },
   {
-    date: 10,
-    active: false
+    date: 25,
+    active: false,
+    current: false,
+    currentDay: ""
   },
   {
-    date: 11,
-    active: false
+    date: 26,
+    active: false,
+    current: false,
+    currentDay: ""
   }]
     
   ngOnInit() {
+   console.log(this.day);
     this.today = new Date().toString();
     var activeDate = this.datePipe.transform(this.today, 'd');
+    if (localStorage.toggleClass == undefined || localStorage.toggleClass == "") {
+
+      // this.data.date = "";
+    } if (localStorage.toggleClass != undefined) {
+      this.previousSelected = localStorage.getItem('toggleClass');
+      console.log(this.previousSelected);
+      // localStorage.removeItem('toggleClass');
+    }
    for(var i = 0;i < this.thisWeek.length;i++)
    {
-     if (this.thisWeek[i].date == activeDate) {
+     if (this.day == this.thisWeek[i].date || this.previousSelected == this.thisWeek[i].date) {
+       this.thisWeek[i].active = true;
+     }
+    else if (this.thisWeek[i].date == activeDate) {
      
        this.thisWeek[i].currentDay ="Today"; 
        this.thisWeek[i].active = true;
@@ -113,12 +155,19 @@ export class CalendarModalPage implements OnInit {
      
    }
     for (var i = 0; i < this.nextWeek.length; i++) {
-      if (this.nextWeek[i].date == activeDate) {
+      if (this.day == this.nextWeek[i].date || this.previousSelected == this.nextWeek[i].date ) {
         this.nextWeek[i].active = true;
+        
+      }
+    else if (this.nextWeek[i].date == activeDate) {
+        console.log(activeDate);
+        this.nextWeek[i].currentDay = "Today"; 
+        this.nextWeek[i].current = true;
+        console.log(this.nextWeek[i].current = true);
       }
     }
 
-    
+  
   }
  
   toggleClass(date) {
@@ -129,10 +178,12 @@ export class CalendarModalPage implements OnInit {
     for (var i = 0; i < this.nextWeek.length; i++) {
       this.nextWeek[i].active = false;
     }
-    
-    date.active = true;
-
-    console.log(date.active);
+   
+     date.active = true;
+     this.data =  date;
+    localStorage.setItem('toggleClass', this.data.date);
+    this.modalCtrl.dismiss(this.data.date);
+    console.log(this.data.date);
     
   }
   

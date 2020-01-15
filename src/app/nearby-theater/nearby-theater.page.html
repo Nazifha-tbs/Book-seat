@@ -1,20 +1,19 @@
-<ion-content>
+<ion-content >
+  <div id="bg">
   <div>
     <img src="../assets/icon/blackarrow.svg" class="back" [routerLink]="['/home']">
 
   </div>
-<div style="
-height: 20%;margin-top: 40% !important;  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, 
-     rgba(255, 255, 255, 0) 13.5%,
-      rgba(255, 255, 255, 0) 33.33%, rgb(255, 255, 255) 100%) !important;">
+<div class="grad">
 
 </div>
 <div style="background: white;height: max-content">
 <div  class="btnDiv">
   <div *ngFor="let item of distance" class="btnDiv2">
-<ion-button fill="clear" class="btnStyle">
+<button fill="clear" class="btnStyle" 
+[ngClass]="{'active': item.active}" (click)="selected(item)">
   {{item.value}}
-</ion-button>
+</button>
   </div>
   
 </div>
@@ -43,6 +42,8 @@ height: 20%;margin-top: 40% !important;  background: linear-gradient(180deg, rgb
 </div>
 </div>
 
+
+</div>
 
 </div>
 </ion-content>

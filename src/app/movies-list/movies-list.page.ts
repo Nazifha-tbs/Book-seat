@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { IonSlides, NavController } from '@ionic/angular';
+
 
 
 @Component({
@@ -9,13 +10,16 @@ import { IonSlides } from '@ionic/angular';
 })
 export class MoviesListPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController, ) { 
+    
+  }
   @ViewChild('slides', { static: true }) slider: IonSlides;
   segment  = 0;
  index: any;
   
 
   ngOnInit() {
+    this.buttons[0].active = true;
     
   }
   buttons : any [] = [{
@@ -63,7 +67,13 @@ export class MoviesListPage implements OnInit {
 
       }
     ]
- 
+ navigate(i)
+ {
+   var name = this.Movies[i].name;
+  
+   var rate = this.Movies[i].rate;
+   this.navCtrl.navigateForward('movie-details', { queryParams : { data : name , rate }})
+ }
 
   selected(index, category){
     console.log(category);

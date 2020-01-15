@@ -2,13 +2,14 @@ ion-page{
     --background: transparent;
 }
 ion-header {
+ 
   height: 50px;
   border-bottom-color: transparent;
   border-bottom-width: 0px;
- 
 //   --background: #000 !important;
  
 }
+
 .gps{
     height: 28px;
   width: 28px;
@@ -28,8 +29,8 @@ div.circle {
   width: 55px;
   border-radius: 50%;
   left: 44%;
-  
-  margin-top: -32px;
+  margin-bottom: -25px; 
+  // margin-top: -32px;
   text-align: center;
   background: #e81667;
   z-index: 50000 !important;
@@ -52,7 +53,7 @@ img.map {
   display: block;
   background-size: contain;
   text-align: center !important;
-  margin-top: 20px;
+  margin-top: 30px;
     // height: 100px;
     height: 57.5% !important;
     width: 99.5%;
@@ -93,8 +94,8 @@ img.map {
   background: #fbedf3;
   // --background: #E81667 !important;
   // opacity: 0.5;
-  height: 55%;
-  width: 53%;
+  height: 57%;
+  width: 55%;
 }
 .smallIcon {
   height: 22px;

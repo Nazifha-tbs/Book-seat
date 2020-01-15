@@ -8,6 +8,16 @@ ion-content {
 ion-card {
   border-radius: 12px;
 }
+img,button,div{
+    outline: none;
+}
+ion-button{
+  outline: none;
+}
+.logoDiv{
+  padding-top: 15px;
+  margin-right:20px;
+}
 .logo {
   // font-family: 'Poppins-SemiBold' !important;
   height: 70px;
@@ -18,6 +28,13 @@ ion-card {
   font-size: 22px;
 }
 .quote {
+margin-right: 10px;
+  font-weight: lighter;
+  opacity: 0.9;
+  font-size: 12px;
+}
+.quote2 {
+
   font-weight: lighter;
   opacity: 0.9;
   font-size: 12px;
@@ -32,9 +49,11 @@ ion-card {
     min-height: 60%;
   padding-top: 20px;
   width: 100%;
-  height: 67%;
+  height: 64%;
 }
 .loginT {
+  margin-top: 10px;
+  margin-bottom: 16px;
   font-family: "Poppins-Medium" !important;
   // font-weight: bold;
   float: left;
@@ -52,16 +71,23 @@ ion-card {
   text-align: left;
 }
 .forgot {
+
   margin-top: 8px;
   float: right;
   color: #666666;
-  //   font-size: 12px;
-  font-size: 70%;
+    font-size: 12px;
   font-family: "Poppins-regular";
 }
 .loginBtn {
-  font-size: 95%;
-  margin-top: 35px;
+
+  --background-activated: transparent;
+    --background-focused: white;
+    --background-hover: white;
+    --color-activated: white;
+    --color-focused: white;
+  font-size: 16px;
+  margin-top: 50px;
+  font-family: 'Poppins-SemiBold';
   border-radius: 10px;
   height: 48px;
   // width: 100%;
@@ -69,45 +95,60 @@ ion-card {
   background: #e81667;
 }
 .divider {
+
   display: inline-block;
   width: 40%;
-  color: #ebebeb;
+  color: #dddddd;
   border-top-style: solid;
   border-top-width: 0.5px;
-  border-top-color: #ebebeb !important;
+  border-top-color: #dddddd !important;
   height: 4px;
   margin-right: 2px;
   margin-left: 2px;
+
 }
 .or {
-  margin-top: 4px;
+ 
+  margin-bottom: -12px;
   margin-right: 2px;
   margin-left: 2px;
-  color: #f1f1f1 !important;
+  color: #dfdfdf !important;
   font-size: 12px;
 }
 .googleBtn {
+  --background-activated: transparent;
+    --background-focused: #F14336;
+    --background-hover: #F14336;
+    --color-activated: #F14336;
+    --color-focused: #F14336;
+
+  text-transform:none!important;
   font-family: "Poppins-regular" !important;
-  // font-size: 14px;
   font-size: 90%;
   margin-right: 14px;
-  border-radius: 8px;
+  border-radius: 5px;
   height: 40px;
   width: 40%;
   color: #999999;
   background: #fff1f0;
-  border: 0.5px solid #f14236;
+  border: 0.4px solid #f14336;
 }
 .fbBtn {
+  --background-activated: transparent;
+    --background-focused: #3164ce;
+    --background-hover: #3164ce;
+    --color-activated: #3164ce;
+    --color-focused: #3164ce; 
+
+  text-transform:none!important;
   font-size: 90%;
   font-family: "Poppins-regular" !important;
-  // font-size: 14px;
-  border-radius: 8px;
+  border-radius: 5px;
   height: 40px;
   width: 40%;
   color: #999999;
   background: #f5f9ff;
-  border: 0.5px solid #3164ce;
+  border: 0.4px solid #3164ce;
 }
 .icon {
   margin-right: 5px;
@@ -116,12 +157,12 @@ ion-card {
   width: 22px;
 }
 .account{
-    font-size: 10px;
+    font-size: 11px;
     color: white;
     opacity: 0.8;
 }
 .Sign{
-      font-size: 10px;
+      font-size: 11px;
     color: white;
     
 }

@@ -3,28 +3,40 @@
     <ion-title>
       <div>
         <img src="../assets/img/profile2.png" class="profileImg">
-        <div style="float: right;margin-top: 10px;">
+        <div style="float: right;margin-top: 17px;">
           <img src="../assets/icon/searchzoom.svg" class="searchImg">
           <img src="../assets/icon/notification.svg" class="notification" [routerLink]="['/login']">
         </div>
-        <span class="profileName">
-          Felicity Smoak
-        </span>
-        <br>
-        <ion-text class="location">
-          Niarobi
-        </ion-text>
-       
+        <div class="profileDiv">
+          <span class="profileName">
+            Felicity Smoak
+          </span>
+          <div class="location">
+            <span class="location">
+              Niarobi
+            </span>
+          </div>
+        </div>
+
+
+
       </div>
-      
+
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="slideImg">
-    <img [routerLink]="['/theater-list']"  src="../assets/img/boxingoffer.jpg">
-  </div>
+  <ion-slides #Slides (ionSlideDidChange)="slideChanged()" autoplay="2000" loop="true" speed="500">
+    <ion-slide *ngFor="let image of imageContainer">
+    
+
+      <div class="slideImg">
+        <img class="slideImgs" [routerLink]="['/theater-list']" src="{{image.img}}">
+      </div>
+    </ion-slide>
+  </ion-slides>
+  
   <div>
     <ion-text class="seatC">
       SEAT CATEGORIES
@@ -34,7 +46,7 @@
         <img src="../assets/icon/film.svg" class="optImg">
         <br>
         <ion-text>
-          movies
+          Movies
         </ion-text>
       </div>
       <div class="slide">
@@ -70,7 +82,7 @@
         <img src="../assets/icon/film.svg" class="optImg">
         <br>
         <ion-text>
-          movies
+          Movies
         </ion-text>
       </div>
       <div class="slide">
@@ -165,9 +177,13 @@
       </ion-label>
     </div>
 
-    <div style="text-align: center;">
-      <img src="../assets/img/map.png" class="map">
+    <div style="text-align: center;padding-left:20px;padding-right: 20px;">
+      <div id="map" [routerLink]="['/nearby-theater']">
+     <div class="mapStyle">
+       <img class="chairPink" src="../assets/icon/armchairpink.svg">
 
+     </div>
+</div>
     </div>
   </div>
   <div>
@@ -278,7 +294,7 @@
         <div>
           <img class="movieImg" src="../assets/img/play2.png">
           <br>
-          <span class="movieName ion-text-wrap" >
+          <span class="movieName ion-text-wrap">
             Happy Halloween 2K19
           </span>
           <div style="margin-top: 5px;">

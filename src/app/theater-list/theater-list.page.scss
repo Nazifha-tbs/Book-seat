@@ -1,3 +1,9 @@
+ion-button{
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:  #fcfcfc !important;
+    -webkit-tap-highlight-color: #fcfcfc !important;
+    -webkit-touch-callout: none;
+}
 ion-toolbar {
   --background: #222539;
   color: white;
@@ -12,6 +18,7 @@ ion-title {
   font-size: 16px;
 }
 ion-col {
+  padding: 0%;
   max-width: 106px;
   width: 100px;
 }
@@ -25,6 +32,30 @@ ion-footer {
   --background: #222539 !important;
   color: white;
 }
+ion-button {
+  --background-activated: #fcfcfc !important;
+  visibility: inherit;
+  :active{
+    --background:  #fcfcfc !important;
+  }
+:host(.button-clear) {
+    --border-width: 0;
+    --background:  #fcfcfc !important;
+    --color: #3880ff;
+}
+}
+:host(.button-clear) {
+    --border-width: 0;
+    --background:  #fcfcfc !important;
+    --color: #3880ff;
+}
+
+img,
+button,
+div {
+  outline: none;
+}
+
 .footerBar {
   font-weight: lighter;
   text-shadow: 0px 0px 0px 0px;
@@ -35,11 +66,15 @@ ion-footer {
 }
 
 .searchImg {
-    float: right;
+  float: right;
   height: 18px;
   width: 18px;
   margin-right: 15px;
-  
+}
+.notification {
+  float: right;
+  height: 18px;
+  width: 18px;
 }
 .back {
   margin-left: 10px;
@@ -69,19 +104,38 @@ ion-footer {
   margin-left: 5px;
 }
 .buttonStyle {
+  height: 36px; 
+  width: 90px;
+  --background-activated: #fcfcfc !important;
+  --background-focused: #2ec492;
+  --background-hover: #2ec492;
+  --color-activated: #2ec492;
+  --color-focused: #2ec492;
+  border-radius: 4px;
   color: #2ec492;
   background: #fcfcfc !important;
-  border: 1px solid #e5e5e5;
+  --background: #fcfcfc !important;
+  border: 0.6px solid #ececec;
 }
 .buttonActive {
+  height: 36px; 
+  width: 90px;
+  --background-activated: #fcfcfc !important;
+  --background-focused: #eb8d2f;
+  --background-hover: #eb8d2f;
+  --color-activated: #eb8d2f;
+  --color-focused: #eb8d2f;
+  border-radius: 4px;
   color: #eb8d2f;
   background: #fcfcfc !important;
-  border: 1px solid #e5e5e5;
+   --background: #fcfcfc !important;
+  border: 0.6px solid #e5e5e5;
 }
 .buttonInactive {
+  border-radius: 4px;
   color: #e5e5e5;
   background: #fcfcfc !important;
-  border: 1px solid #e5e5e5;
+  border: 0.6px solid #e5e5e5;
 }
 .cal {
   height: 15px;
@@ -99,4 +153,15 @@ ion-footer {
 .downA {
   height: 9px;
   width: 8px;
+}
+.selected {
+   --background-activated: #fcfcfc !important;
+  --background-focused: white;
+  --background-hover: white;
+  --color-activated: white;
+  --color-focused: white;
+  border-radius: 4px;
+  color: white;
+  --background: #2ec492 !important;
+  background: #2ec492 !important;
 }

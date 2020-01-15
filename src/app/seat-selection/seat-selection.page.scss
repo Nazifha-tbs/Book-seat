@@ -1,10 +1,12 @@
-ion-toolbar {
+.toolbar {
   --background: #222539;
   color: white;
 }
+ 
 ion-content {
   font-family: "Poppins-Regular" !important;
   --background: #f5f5fa;
+  margin-bottom: 20px;
 }
 ion-title {
   padding-left: 15px;
@@ -25,6 +27,12 @@ ion-footer {
   --background: #222539 !important;
   color: white;
 }
+
+
+img,button,div{
+    outline: none;
+}
+
 .footerBar {
   font-weight: lighter;
   text-shadow: 0px 0px 0px 0px;
@@ -60,15 +68,59 @@ ion-footer {
   font-size: 11px;
   margin-left: 5px;
 }
-.buttonActive {
-  color: #2ec492;
-  background: #fcfcfc !important;
-  border: 1px solid #e5e5e5;
+// .buttonActive {
+//   color: #2ec492;
+//   background: #fcfcfc !important;
+//   border: 1px solid #e5e5e5;
+// }
+// .buttonStyle {
+
+//  --background-activated: transparent;
+//     --background-focused: #eb8d2f;
+//     --background-hover: #eb8d2f;
+//     --color-activated: #eb8d2f;
+//     --color-focused: #eb8d2f;
+
+//   color: #eb8d2f;
+//   background: #fcfcfc !important;
+//   border: 1px solid #e5e5e5;
+// }
+// .buttonInactive {
+//   color: #e5e5e5;
+//   background: #fcfcfc !important;
+//   border: 1px solid #e5e5e5;
+// }
+.active{
+ 
+    --background-focused: white;
+    --background-hover: white;
+    --color-activated: white;
+    --color-focused: white;
+  border-radius: 4px;
+  color: white;
+  background: #2ec492 !important;
+  border: 0.6px solid #2ec492;
 }
 .buttonStyle {
+ 
+    --background-focused: #2ec492;
+    --background-hover: #2ec492;
+    --color-activated: #2ec492;
+    --color-focused: #2ec492;
+  border-radius: 4px;
+  color: #2ec492;
+  background: #fcfcfc !important;
+  border: 0.6px solid #ececec;
+}
+.buttonActive {
+   border-radius: 4px;
+    --background-focused: #eb8d2f;
+    --background-hover: #eb8d2f;
+    --color-activated: #eb8d2f;
+    --color-focused: #eb8d2f; 
   color: #eb8d2f;
   background: #fcfcfc !important;
-  border: 1px solid #e5e5e5;
+  border: 0.6px  solid #e5e5e5;
 }
 .buttonInactive {
   color: #e5e5e5;
@@ -99,7 +151,7 @@ ion-footer {
   margin-right: 2px;
   background: white;
 }
-button.active {
+.active {
   border-radius: 5px;
   height: 32px;
   width: 30px;
@@ -107,6 +159,18 @@ button.active {
   margin-right: 2px;
   color: white;
   background: #2ec492;
+}
+
+.selected {
+  --background-focused: white;
+  --background-hover: white;
+  --color-activated: white;
+  --color-focused: white;
+  border-radius: 4px;
+  color: white;
+  --background: #2ec492 !important;
+  background: #2ec492 !important;
+
 }
 button.activated {
   min-width: 85px;
@@ -166,6 +230,12 @@ button.activated {
 }
 
 .bookSeat {
+    --background-activated: transparent;
+    --background-focused: white;
+    --background-hover: white;
+    --color-activated: white;
+    --color-focused: white;
+
   margin: 0%;
   bottom: 0% !important;
   width: 100%;
