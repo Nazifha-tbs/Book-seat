@@ -11,8 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { InfoModalPageModule } from './info-modal/info-modal.module';
 import { CalendarModalPageModule } from './calendar-modal/calendar-modal.module';
 import { SeatTypeModalPageModule } from './seat-type-modal/seat-type-modal.module';
-
 import { PaymentModalPageModule } from './payment-modal/payment-modal.module';
+import { HttpClientModule } from '@angular/common/http';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 
 
 
@@ -20,10 +22,12 @@ import { PaymentModalPageModule } from './payment-modal/payment-modal.module';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    InfoModalPageModule,CalendarModalPageModule,SeatTypeModalPageModule,PaymentModalPageModule],
+    InfoModalPageModule, CalendarModalPageModule, SeatTypeModalPageModule, PaymentModalPageModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
+   
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

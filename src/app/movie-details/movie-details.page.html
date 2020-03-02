@@ -27,7 +27,7 @@
         Oct 15, 2019
       </span>
       <span class="votes">
-        1.8k votes
+      {{votes}}
       </span>
     </div>
     <br>
@@ -41,9 +41,9 @@
 
     <div>
       <img src="../assets/icon/clock.svg" class="smallImg">
-      <span class="extraSmall">2h 59m </span>
+      <span class="extraSmall">{{duration}} </span>
       <img src="../assets/icon/mask.svg" class="smallImg">
-      <span class="extraSmall">Action, Drama </span>
+      <span class="extraSmall">{{category}} </span>
     </div>
   </div>
 
@@ -90,7 +90,7 @@
 
   <div class="review">
     <div>
-      <span class="offerF">1,403 reviews</span>
+      <span class="offerF">{{total}} reviews</span>
       <span class="write">Write yours ></span>
     </div>
     <div style="display: inline-block;width: 100%;margin-top: 5px;">
@@ -100,14 +100,13 @@
       </div>
       <div>
         <div>
-          <span class="profileName">Mokka mohan</span>
+          <span class="profileName">{{writer}}</span>
           <span class="date">
-            Nov 7, 2019
+            {{date}}
           </span>
         </div>
         <div style="margin-left: 25px;font-size: 11px;color: #666666;margin-top: 3px;">
-          With all the updates after the last few months the app has improved a lot.
-          Keeps me up to date.
+        {{review}}
         </div>
       </div>
 
@@ -122,30 +121,11 @@
       <span class="write">View all ></span>
     </div>
     <div class="slide">
-      <div class="slider">
-      <img src="../assets/img/cast1.png" class="castImg">
+      <div class="slider" *ngFor="let cast of Crews">
+      <img src="{{cast.castImage}}" class="castImg">
       <br> 
-      <span class="castName">chadwick</span>
+      <span class="castName">{{cast.castName}}</span>
       </div>
-
-      <div class="slider">
-        <img src="../assets/img/cast2.png" class="castImg">
-        <br>
-        <span class="castName">Letitia Wright</span>
-      </div>
-
-      <div class="slider">
-        <img src="../assets/img/cast3.png" class="castImg">
-        <br>
-        <span class="castName">B. Jordan</span>
-      </div>
-
-      <div class="slider">
-        <img src="../assets/img/cast4.png" class="castImg">
-        <br>
-        <span class="castName">Lupita Nyong</span>
-      </div>
-
     </div>
   </div>
 </ion-content>

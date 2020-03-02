@@ -1,49 +1,61 @@
-<ion-content >
-  <div id="bg">
-  <div>
-    <img src="../assets/icon/blackarrow.svg" class="back" [routerLink]="['/home']">
+<ion-content>
+  <div class="map-wrapper">
 
-  </div>
-<div class="grad">
+<ion-footer>
 
-</div>
-<div style="background: white;height: max-content">
-<div  class="btnDiv">
-  <div *ngFor="let item of distance" class="btnDiv2">
-<button fill="clear" class="btnStyle" 
-[ngClass]="{'active': item.active}" (click)="selected(item)">
-  {{item.value}}
-</button>
-  </div>
   
-</div>
-
-<div style="padding: 16px;height: 110px;" *ngFor="let item of list">
-<div style="float: left;width: 90px;" class="theater">
-  <img src="{{item.img}}" class="theater" >
-</div>
-
-<div style="padding-top: 10px;padding-left: 100px !important;">
-<ion-label class="theaterName">
-  {{item.name}}
-  <!-- Arasan Cinemas A/C 2K Dolby -->
-</ion-label>
-<br>
-
-<ion-label class="smallFont">
-  <!-- Coimbatore -->
-  {{item.city}}
-</ion-label>
-<br>
-<span style="color: #E81667"> ★ </span ><span class="smallFont"> 
-  <!-- 5 star --> {{item.rating}}
-</span>
-
-</div>
-</div>
-
+    <ion-fab>
+      <button ion-fab><img src="../assets/icon/blackarrow.svg" class="back" [routerLink]="['/home']"></button>
+    </ion-fab>
+    <ion-fab id="grad">
+      
+    </ion-fab>
+<div #map id="map">
 
 </div>
 
-</div>
+</ion-footer>
+   
+  </div>
+
+  <div id="bg">
+
+    <div style="background: white;height: max-content">
+      <div class="btnDiv">
+        <div *ngFor="let item of distance" class="btnDiv2">
+          <button fill="clear" class="btnStyle" [ngClass]="{'active': item.active}" (click)="selected(item)">
+            {{item.min}} - {{item.max}} kms
+          </button>
+        </div>
+
+      </div>
+
+      <div style="padding: 16px;height: 110px;" *ngFor="let item of list">
+        <div style="float: left;width: 90px;" class="theater">
+          <img src="{{item.img}}" class="theater">
+        </div>
+
+        <div style="padding-top: 10px;padding-left: 100px !important;">
+          <ion-label class="theaterName">
+            {{item.name}}
+            <!-- Arasan Cinemas A/C 2K Dolby -->
+          </ion-label>
+          <br>
+
+          <ion-label class="smallFont">
+            <!-- Coimbatore -->
+            {{item.city}}
+          </ion-label>
+          <br>
+          <span style="color: #E81667"> ★ </span><span class="smallFont">
+            <!-- 5 star --> {{item.rating}}
+          </span>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
 </ion-content>

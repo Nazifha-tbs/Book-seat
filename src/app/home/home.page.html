@@ -2,14 +2,14 @@
   <ion-toolbar>
     <ion-title>
       <div>
-        <img src="../assets/img/profile2.png" class="profileImg">
+        <img src="{{profileImg}}" alt="../assets/img/profile2.png" class="profileImg">
         <div style="float: right;margin-top: 17px;">
           <img src="../assets/icon/searchzoom.svg" class="searchImg">
           <img src="../assets/icon/notification.svg" class="notification" [routerLink]="['/login']">
         </div>
         <div class="profileDiv">
           <span class="profileName">
-            Felicity Smoak
+            {{fullname}}
           </span>
           <div class="location">
             <span class="location">
@@ -27,71 +27,31 @@
 </ion-header>
 
 <ion-content>
+  
+
   <ion-slides #Slides (ionSlideDidChange)="slideChanged()" autoplay="2000" loop="true" speed="500">
     <ion-slide *ngFor="let image of imageContainer">
-    
+
 
       <div class="slideImg">
-        <img class="slideImgs" [routerLink]="['/theater-list']" src="{{image.img}}">
+        <img class="slideImgs"  src="{{image.img}}">
       </div>
     </ion-slide>
   </ion-slides>
-  
+
   <div>
     <ion-text class="seatC">
       SEAT CATEGORIES
     </ion-text>
     <div class="optionSlide">
-      <div class="slide">
-        <img src="../assets/icon/film.svg" class="optImg">
+      <div class="slide" *ngFor="let item of category">
+        <img src="{{item.categoryImg}}" class="optImg">
         <br>
-        <ion-text>
-          Movies
+        <ion-text class="optName">
+          {{item.categoryName}}
         </ion-text>
       </div>
-      <div class="slide">
-        <img src="../assets/icon/spotlights.svg" class="optImg">
-        <br>
-        <ion-text>
-          Events
-        </ion-text>
-      </div>
-      <div class="slide">
-        <img src="../assets/icon/play.svg" class="optImg">
-        <br>
-        <ion-text>
-          Plays
-        </ion-text>
-      </div>
-
-      <div class="slide">
-        <img src="../assets/icon/running.svg" class="optImg">
-        <br>
-        <ion-text>
-          Sports
-        </ion-text>
-      </div>
-      <div class="slide">
-        <img src="../assets/icon/flag.svg" class="optImg">
-        <br>
-        <ion-text>
-          Activity
-        </ion-text>
-      </div>
-      <div class="slide">
-        <img src="../assets/icon/film.svg" class="optImg">
-        <br>
-        <ion-text>
-          Movies
-        </ion-text>
-      </div>
-      <div class="slide">
-        <img src="../assets/icon/spotlights.svg" class="optImg">
-        <br>
-        <ion-text>
-          Events
-        </ion-text>
-      </div>
+    
     </div>
   </div>
 
@@ -100,69 +60,23 @@
       IN THEATERS
     </ion-text>
     <div class="moviesSlide">
-      <div class="moviesBlock" [routerLink]="['/movies-list']">
+      <div class="moviesBlock"  (click)="goToNext()" *ngFor="let items of movies">
         <div>
-          <img class="movieImg" src="../assets/img/images.png">
+          <img class="movieImg" src="{{items.movieImg}}">
           <br>
           <ion-label class="movieName">
-            Charli's angle
+            {{items.movieName}}
           </ion-label>
           <div style="margin-top: 5px;">
             <img src="../assets/icon/like.svg" class="like">
             <span class="likeVal">
-              98%
+              {{items.rate}}
             </span>
           </div>
         </div>
       </div>
 
-      <div class="moviesBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/images1.png">
-          <br>
-          <ion-label class="movieName">
-            Jumanji
-          </ion-label>
-          <div style="margin-top: 5px;">
-            <img src="../assets/icon/like.svg" class="like">
-            <span class="likeVal">
-              98%
-            </span>
-          </div>
-        </div>
-      </div>
 
-      <div class="moviesBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/images2.png">
-          <br>
-          <ion-label class="movieName">
-            Bad Boys
-          </ion-label>
-          <div style="margin-top: 5px;">
-            <img src="../assets/icon/like.svg" class="like">
-            <span class="likeVal">
-              98%
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="moviesBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/images3.png">
-          <br>
-          <ion-label class="movieName">
-            Spies in Disgu...
-          </ion-label>
-          <div style="margin-top: 5px;">
-            <img src="../assets/icon/like.svg" class="like">
-            <span class="likeVal">
-              98%
-            </span>
-          </div>
-        </div>
-      </div>
     </div>
 
   </div>
@@ -172,20 +86,20 @@
       <ion-label class="title">
         NEARBY THEATERS
       </ion-label>
-      <ion-label class="view" [routerLink]="['/nearby-theater']">
+      <ion-label class="view" (click)="navigate()">
         View all
       </ion-label>
     </div>
+<div class="map-wrapper">
 
-    <div style="text-align: center;padding-left:20px;padding-right: 20px;">
-      <div id="map" [routerLink]="['/nearby-theater']">
-     <div class="mapStyle">
-       <img class="chairPink" src="../assets/icon/armchairpink.svg">
+<div #map id="map">
 
-     </div>
 </div>
+</div>
+    
     </div>
-  </div>
+
+  
   <div>
     <div style="padding-left:20px;padding-right: 20px;margin-top: 25px;">
       <img src="../assets/icon/spotlightsBlack.svg" class="like">
@@ -198,47 +112,20 @@
     </div>
 
     <div class="eventSlide">
-      <div class="eventsBlock">
+      <div class="eventsBlock" *ngFor="let event of events">
         <div>
-          <img class="movieImg" src="../assets/img/events.png">
+          <img class="movieImg" src="{{event.eventImg}}">
           <br>
-          <span class="movieName ion-text-wrap">
-            Happy Halloween 2K19
-          </span>
-          <div style="margin-top: 5px;">
-
-            <ion-label class="likeVal">
-              Music show
-            </ion-label>
+          <div class="eventName">
+            <span>
+              {{event.eventName}}
+            </span>
           </div>
-        </div>
-      </div>
-      <div class="eventsBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/event.png">
-          <br>
-          <span class="movieName ion-text-wrap">
-            Summer sounds festiva..
-          </span>
-          <div style="margin-top: 5px;">
+
+          <div style="margin-top: 1px;">
 
             <ion-label class="likeVal">
-              Comedy show
-            </ion-label>
-          </div>
-        </div>
-      </div>
-      <div class="eventsBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/event1.png">
-          <br>
-          <span class="movieName ion-text-wrap">
-            Happy Halloween 2K19
-          </span>
-          <div style="margin-top: 5px;">
-
-            <ion-label class="likeVal">
-              Music show
+              {{event.type}}
             </ion-label>
           </div>
         </div>
@@ -259,48 +146,20 @@
     </div>
 
     <div class="eventSlide">
-      <div class="eventsBlock">
+      <div class="eventsBlock" *ngFor="let play of plays">
         <div>
-          <img class="movieImg" src="../assets/img/play.png">
+          <img class="movieImg" src="{{play.image}}">
           <br>
-          <span class="movieName ion-text-wrap">
-            Happy Halloween 2K19
-          </span>
-          <div style="margin-top: 5px;">
-
-            <ion-label class="likeVal">
-              Music show
-            </ion-label>
+          <div class="eventName">
+            <span>
+              {{play.name}}
+            </span>
           </div>
-        </div>
-      </div>
-      <div class="eventsBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/play1.png">
-          <br>
-          <span class="movieName ion-text-wrap">
-            Summer sounds festiva..
-          </span>
-          <div style="margin-top: 5px;">
+
+          <div style="margin-top: 1px;">
 
             <ion-label class="likeVal">
-              Comedy show
-            </ion-label>
-          </div>
-        </div>
-      </div>
-
-      <div class="eventsBlock">
-        <div>
-          <img class="movieImg" src="../assets/img/play2.png">
-          <br>
-          <span class="movieName ion-text-wrap">
-            Happy Halloween 2K19
-          </span>
-          <div style="margin-top: 5px;">
-
-            <ion-label class="likeVal">
-              Music show
+              {{play.type}}
             </ion-label>
           </div>
         </div>

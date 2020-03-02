@@ -102,7 +102,8 @@ img,button,div{
   border: 0.6px solid #2ec492;
 }
 .buttonStyle {
- 
+ height: 36px; 
+  width: 90px;
     --background-focused: #2ec492;
     --background-hover: #2ec492;
     --color-activated: #2ec492;
@@ -113,6 +114,8 @@ img,button,div{
   border: 0.6px solid #ececec;
 }
 .buttonActive {
+  height: 36px; 
+  width: 90px;
    border-radius: 4px;
     --background-focused: #eb8d2f;
     --background-hover: #eb8d2f;
@@ -123,6 +126,9 @@ img,button,div{
   border: 0.6px  solid #e5e5e5;
 }
 .buttonInactive {
+    border-radius: 4px;
+  height: 36px; 
+  width: 90px;
   color: #e5e5e5;
   background: #fcfcfc !important;
   border: 1px solid #e5e5e5;
@@ -162,6 +168,8 @@ img,button,div{
 }
 
 .selected {
+  height: 36px; 
+  width: 90px;
   --background-focused: white;
   --background-hover: white;
   --color-activated: white;

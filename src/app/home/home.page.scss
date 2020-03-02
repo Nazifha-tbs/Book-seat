@@ -1,3 +1,18 @@
+.map-wrapper {
+  position: relative;
+  text-align: center;
+  padding-left:20px;
+  padding-right: 20px;
+}
+#map {
+ 
+  // background: #ccc url("../../assets/img/map.png") no-repeat center center / cover;
+  border-radius: 4px;
+  margin-top: 10px;
+  height: 150px;
+  width: 100%;
+}
+// -------------------------------------
 ::-webkit-scrollbar {
   width: 0 !important;
 } //hide scrollbar
@@ -77,15 +92,16 @@ ion-toolbar {
   font-size: 13px;
   color: #707070;
   padding-left: 10px;
-  height: 100px;
+  height: 90px;
   width: 100%;
   overflow: scroll;
   white-space: nowrap;
   //   display: inline-block;
 }
 .optionSlide .slide {
-  height: 80px;
-  width: 55px;
+  margin-top: 10px;
+  // height: 85px;
+  // width: 55px;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 10px;
@@ -93,10 +109,15 @@ ion-toolbar {
   text-align: center;
 }
 .optImg {
-  padding-left: 10px;
+  padding-right: 3px;
   text-align: center;
-  height: 45px;
-  width: 55px !important;
+  height: 30px;
+  width: 30px !important;
+  margin-bottom: 5px;
+}
+.optName {
+  font-family: "Poppins-Regular";
+  font-size: 13px;
 }
 .moviesSlide {
   font-size: 13px;
@@ -148,15 +169,7 @@ ion-toolbar {
   color: #707070;
   font-size: 11px;
 }
-#map {
-  padding-top: 50px;
-  padding-left: 120px;
-  background: #ccc url("../../assets/img/map.png") no-repeat center center / cover;
-  border-radius: 4px;
-  margin-top: 10px;
-  height: 150px;
-  width: 100%;
-}
+
 .view {
   float: right;
   font-size: 12px;
@@ -181,6 +194,23 @@ ion-toolbar {
   width: 100px;
   margin-right: 10px;
   display: inline-block;
+}
+.eventName{
+  height: 47px;
+  width:90px !important; 
+  font-family: "Poppins-Regular" !important;
+  overflow: hidden;
+  margin-top: 5px;
+  text-align: start;
+  width: 100px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #333333 !important;
+  white-space: pre-line;
+  word-wrap: break-word;
+//   word-wrap: break-word;
+//  word-break: break-all;
+  font-size: 12px;
 }
 .title {
   font-size: 14px;

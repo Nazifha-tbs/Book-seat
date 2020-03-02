@@ -132,6 +132,8 @@ div {
   border: 0.6px solid #e5e5e5;
 }
 .buttonInactive {
+  height: 36px; 
+  width: 90px;
   border-radius: 4px;
   color: #e5e5e5;
   background: #fcfcfc !important;
@@ -155,6 +157,8 @@ div {
   width: 8px;
 }
 .selected {
+  height: 36px; 
+  width: 90px;
    --background-activated: #fcfcfc !important;
   --background-focused: white;
   --background-hover: white;

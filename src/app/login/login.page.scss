@@ -2,6 +2,8 @@ ion-content {
   // font-family: 'Poppins-regular';
   text-align: center !important;
   padding: 5px;
+  height: 100%;
+  overflow: scroll;
   --background: #e81667;
   --color: white !important;
 }
@@ -42,14 +44,16 @@ margin-right: 10px;
 .loginCard {
   background: white;
   height: 100%;
-  width: 95%;
+  // width: 95%;
+  max-width: 95%;
   padding: 16px;
 }
 .cardDiv {
     min-height: 60%;
   padding-top: 20px;
   width: 100%;
-  height: 64%;
+  // height: 64%;
+
 }
 .loginT {
   margin-top: 10px;

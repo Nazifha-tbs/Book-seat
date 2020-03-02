@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, NavController } from '@ionic/angular';
+import { IonSlides, NavController, LoadingController } from '@ionic/angular';
+import { DataServiceService } from '../services/data-service.service';
 
 
 
@@ -9,9 +10,25 @@ import { IonSlides, NavController } from '@ionic/angular';
   styleUrls: ['./movies-list.page.scss'],
 })
 export class MoviesListPage implements OnInit {
-
-  constructor(public navCtrl: NavController, ) { 
-    
+  url : any;
+  Movies : any [];
+  movie : any;
+  constructor(private loadingController: LoadingController,public navCtrl: NavController,private service : DataServiceService) { 
+    this.service.getMoviesData().subscribe( dataResult => {
+      this.movie = dataResult;
+ 
+      this.Movies = [];
+      this.url = service.url;
+      for(var i = 0; i < this.movie.data.length; i++)
+      {
+        this.Movies.push({
+          id: this.movie.data[i].id,
+          movie: this.url  +this.movie.data[i].icon,
+          name: this.movie.data[i].name,
+          rate: this.movie.data[i].rate
+        })
+      }
+    })
   }
   @ViewChild('slides', { static: true }) slider: IonSlides;
   segment  = 0;
@@ -34,45 +51,24 @@ export class MoviesListPage implements OnInit {
   name: "Exclusive",
   active: false
 }]
-    Movies : any[] =[{
-      movie : "../../../assets/img/images.png",
-      name: "Charlie's Angels",
-      rate : "84%"
-
-    }, {
-        movie: "../../../assets/img/images1.png",
-        name: "Jumanji",
-        rate: "98%"
-
-      }, {
-        movie: "../../../assets/img/images2.png",
-        name: "Bad boy",
-        rate: "84%"
-
-      },
-      {
-        movie: "../../../assets/img/images3.png",
-        name: "Spies in disguise",
-        rate: "98%"
-
-      }, {
-        movie: "../../../assets/img/images4.png",
-        name: "Dolittle",
-        rate: "84%"
-
-      }, {
-        movie: "../../../assets/img/images5.png",
-        name: "The King's Man",
-        rate: "98%"
-
-      }
-    ]
- navigate(i)
+    
+ async navigate(i)
  {
+   const loading = await this.loadingController.create({
+     message: 'Please wait...',
+     duration: 2000
+   });
+   var id = this.Movies[i].id;
    var name = this.Movies[i].name;
-  
+
    var rate = this.Movies[i].rate;
-   this.navCtrl.navigateForward('movie-details', { queryParams : { data : name , rate }})
+ 
+   await loading.present();
+   setTimeout(() => {
+     this.navCtrl.navigateForward('movie-details', { queryParams: { data: name, rate, id } })
+    
+   }, 2000);
+
  }
 
   selected(index, category){
@@ -87,6 +83,14 @@ export class MoviesListPage implements OnInit {
       this.slider.slideTo(this.segment);
   }
   async slideChanged() {
+ 
     this.segment = await this.slider.getActiveIndex();
+    for (var i = 0; i < this.buttons.length; i++) {
+      if(i == this.segment)
+      this.selected(this.segment, this.buttons[i])
+    }
+   
   }  
+
+  
 }

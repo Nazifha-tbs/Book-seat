@@ -50,7 +50,12 @@ ion-col {
   --padding: 0px !important;
   height: fit-content;
 }
-
+.buttonDiv {
+  margin-right: 5px;
+  padding: 5px;
+  height: 46px !important;
+  width: 106px !important;
+}
 .list {
   margin-bottom: 13px;
   padding: 10px;
@@ -99,26 +104,54 @@ ion-col {
   margin-left: 5px;
 }
 
-.buttonActive {
-  margin-right: 8px;
-  height: 36px;
-  width: 85px !important;
-  border-radius: 4px;
-  color: #fcfcfc;
-  background: #2ec492 !important;
-  border: 1px solid #e5e5e5;
-}
 .buttonStyle {
-  margin-right: 8px;
+  margin-bottom: 10px;
+ height: 36px; 
+  width: 90px;
+    --background-focused: #2ec492;
+    --background-hover: #2ec492;
+    --color-activated: #2ec492;
+    --color-focused: #2ec492;
   border-radius: 4px;
+  color: #2ec492;
+  background: #fcfcfc !important;
+  border: 0.6px solid #ececec;
+}
+.buttonActive {
+   margin-bottom: 10px;
+  height: 36px; 
+  width: 90px;
+   border-radius: 4px;
+    --background-focused: #eb8d2f;
+    --background-hover: #eb8d2f;
+    --color-activated: #eb8d2f;
+    --color-focused: #eb8d2f; 
   color: #eb8d2f;
   background: #fcfcfc !important;
-  border: 1px solid #e5e5e5;
+  border: 0.6px  solid #e5e5e5;
 }
 .buttonInactive {
+   margin-bottom: 10px;
+    border-radius: 4px;
+  height: 36px; 
+  width: 90px;
   color: #e5e5e5;
   background: #fcfcfc !important;
   border: 1px solid #e5e5e5;
+}
+.selected {
+   margin-bottom: 10px;
+  height: 36px; 
+  width: 90px;
+  --background-focused: white;
+  --background-hover: white;
+  --color-activated: white;
+  --color-focused: white;
+  border-radius: 4px;
+  color: white;
+  --background: #2ec492 !important;
+  background: #2ec492 !important;
+
 }
 .seatBtn {
   border-radius: 2px;

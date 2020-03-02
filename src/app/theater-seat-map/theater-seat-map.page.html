@@ -7,7 +7,7 @@
       <div style="float: left;">
 
         <span class="title">
-         {{movie}}
+          {{movie}}
         </span>
         <div class="address">
           <span class="address">
@@ -38,14 +38,17 @@
       </div>
       <div>
         <ion-grid>
-          
-            <ion-col>
-              <ion-button class="buttonActive" fill="clear">
-                10:00 AM
-              </ion-button>
-            </ion-col>
 
-            <ion-col>
+          <ion-col size="3"  *ngFor="let data of timeData" class="buttonDiv">
+       
+              <button class="{{data.cssClass}}" fill="clear">
+                {{data.time}}
+              </button>
+            
+
+          </ion-col>
+
+          <!-- <ion-col>
               <ion-button class="buttonStyle" fill="clear">
                 1:30 PM
               </ion-button>
@@ -54,8 +57,8 @@
               <ion-button class="buttonStyle" fill="clear">
                 6:30 PM
               </ion-button>
-            </ion-col>
-       
+            </ion-col> -->
+
 
         </ion-grid>
       </div>
@@ -65,17 +68,16 @@
       <img src="../assets/icon/arc.svg" class="arcImg">
 
     </div>
-    <div *ngFor=" let button of seats;let k = index;"
-     class="{{button.cssClass}}">
+    <div *ngFor=" let button of seats;let k = index;" class="{{button.cssClass}}">
       <span class="price"> {{curr}} {{button.value}} {{button.type}}</span>
       <div>
         <ion-grid>
-          <ion-row *ngFor="let row of button.data1;let j = index;" >
+          <ion-row *ngFor="let row of button.data1;let j = index;">
             <ion-col class="rowBtn">
               {{row.row}}
             </ion-col>
             <ion-col *ngFor="let btn of row.data;let i = index">
-              <button fill="clear" class="{{btn.cssClass}}" (click)="selected(i,j,k)"></button>
+              <button fill="clear" class="{{btn.cssClass}}" disabled="{{btn.disabled}}" (click)="selected(i,j,k)"></button>
             </ion-col>
           </ion-row>
 
@@ -86,7 +88,7 @@
       </div>
 
     </div>
-   
+
 
   </div>
 
@@ -98,7 +100,7 @@
 
 
     <span>
-  {{finalValue}}
+      {{finalValue}}
     </span>
 
 

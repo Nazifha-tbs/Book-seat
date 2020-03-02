@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-  <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/home']">
+  <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/movie-details']">
     <ion-title class="title">{{movie}}
      
       <img src="../assets/icon/filter.svg" class="notification">
@@ -21,12 +21,13 @@
     <img src="../assets/icon/information.svg" class="info"(click)="openModal(i)">
     <br>
     <span class="smallGrey">{{theater.city}} </span> 
-    <span class="distance">{{theater.distance}} </span>
+    <span class="distance">{{theater.distance}} km away </span>
   </div>
   <div>
     <ion-grid>
+      <!-- *ngFor="let show of showTiming;let j = index;" -->
       <ion-row >
-        <ion-col *ngFor="let show of theater.data;let j = index;" style="height: 40px;width: 100px;">
+        <ion-col *ngFor="let show of theater.showTiming;let j = index;"  style="height: 40px;width: 100px;">
           <ion-button  disabled="{{show.disabled}}" (click)="navigate(i,j)"
            class="{{show.cssClass}}" 
           fill="clear">{{show.time}}</ion-button>

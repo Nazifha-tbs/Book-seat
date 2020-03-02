@@ -1,5 +1,6 @@
 <ion-content>
-  <div style="margin-top:8%;width: 200px;text-align:center;margin-left: 29%;">
+  <div style="height: 100%">
+ <div style="margin-top:8%;width: 200px;text-align:center;margin-left: 27%;">
     <div style="float: left;">
       <img src="../assets/icon/coupon.svg" class="logo">
     </div>
@@ -32,10 +33,10 @@
 
       <div>
        
-        <ion-input class="inputStyle" placeholder="Username">
+        <ion-input [(ngModel)]="username" class="inputStyle" placeholder="Username">
         </ion-input>
         <br>
-        <ion-input class="inputStyle" placeholder="Password">
+        <ion-input [(ngModel)]="password" class="inputStyle" placeholder="Password">
         </ion-input>
 
 
@@ -46,7 +47,7 @@
         </span>
 
       </div>
-      <ion-button [routerLink]="['/home']" size="large" expand="full" fill="clear" class="loginBtn">
+      <ion-button (click)="navigate()" size="large" expand="full" fill="clear" class="loginBtn">
         LOGIN
       </ion-button>
       <div style="margin-top: 25px;">
@@ -68,7 +69,9 @@
     </ion-card>
   </div>
 
-<div style="bottom: 0%;margin-top: 30px">
+<div style="bottom: 0%;margin-top: 30px;">
   <span class="account">Don’t have an account ? </span><span class="Sign"><u>Sign up</u> here.</span>
 </div>
+  </div>
+ 
 </ion-content>

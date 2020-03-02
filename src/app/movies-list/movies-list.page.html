@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar class="header">
     <img src="../assets/icon/backWhite.svg" class="back" [routerLink]="['/home']">
-    <ion-title><span > Movies in Nairobi</span>
+    <ion-title><span> Movies in Nairobi</span>
       <div style="float: right;margin-top: 5px;">
         <img src="../assets/icon/searchzoom.svg" class="searchImg">
         <img src="../assets/icon/filter.svg" class="notification">
@@ -11,12 +11,14 @@
 </ion-header>
 
 <ion-content>
+  <div style="width: 100%;white-space: nowrap;text-align: center;height:32px;">
+    <div *ngFor=" let category of buttons;let i = index" style="display: inline-block;text-align: center;height:32px;">
+      <button [ngClass]="{'active': category.active}" fill="clear" class="buttonStyle" (click)="selected(i,category)">
+        {{category.name}}
+        <div class="border"></div>
+      </button>
 
-  <div *ngFor=" let category of buttons;let i = index" style="display: inline-block;text-align: center;height:32px;">
-    <button [ngClass]="{'active': category.active}" fill="clear" class="buttonStyle" (click)="selected(i,category)">
-      {{category.name}}
-      <div class="border"></div>
-    </button>
+    </div>
 
   </div>
 
@@ -25,18 +27,19 @@
     <ion-slide>
       <ion-grid>
         <ion-row>
-          <ion-col *ngFor="let list of Movies;let i = index">
-            <div  (click)="navigate(i)" style="margin-bottom: 10px;">
+          <ion-col *ngFor="let list of Movies;let i = index"  size="6">
+            <div (click)="navigate(i)" style="margin-bottom: 10px;">
               <div style="height: 200px;">
-                <img src="{{list.movie}}" class="movieImg">
+                <img src="{{list.movie}}" >
               </div>
-              <div style="text-align: start;height:14px;  margin-top: 3px;">
+              <div style="text-align: start;height:18px">
                 <ion-label class="movieName">
                   {{list.name}}
                 </ion-label>
               </div>
 
-              <div style="height: 18px;padding-bottom: 5px !important;text-align: start;margin-left:25px;margin-top: 4px;">
+              <div
+                style="height: 18px;padding-bottom: 5px !important;text-align: start;margin-left:25px;margin-top: 4px;">
                 <img src="../assets/icon/like.svg" class="like">
                 <ion-label class="rating">{{list.rate}}</ion-label>
               </div>

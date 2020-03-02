@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NavController, ModalController } from '@ionic/angular';
+import { NavController, ModalController, LoadingController } from '@ionic/angular';
 import { InfoModalPage } from '../info-modal/info-modal.page';
 import { CalendarModalPage } from '../calendar-modal/calendar-modal.page';
 import { SeatTypeModalPage } from '../seat-type-modal/seat-type-modal.page';
+import { DataServiceService } from '../services/data-service.service';
 
 
 @Component({
@@ -13,161 +14,81 @@ import { SeatTypeModalPage } from '../seat-type-modal/seat-type-modal.page';
 })
 export class TheaterListPage implements OnInit {
   dataSeat: any;
-  lang: any ;
-  type: any ;
-  day : any;
-  mon : any;
+  lang: any;
+  type: any;
+  day: any;
+  mon: any;
   today: string;
   movie: any;
+  movieData: any;
   previousSelected: any;
+  listItems: any;
+  lists: any[];
+  i: any;
+  j: any;
+  showTiming: any[];
+  selectedTime: any;
+  time: any;
+  disabled: any;
+  cssClass: any;
 
-  i : any;
-  j : any;
-
-  selectedTime : any;
-
-  lists: any[] = [{
-    name: " Arasan Cinemas A/C 2K Dolby",
-    city: "Narobi",
-    distance: "2.4 km away",
-    address: "SP Towers, 343, Sathy Rd, Nairobi, 00100",
-    data: [{
-      time: "11:00 AM",
-      cssClass: 'buttonStyle',
-      disabled: false,
-      active : false
-    },
-    {
-      time: "12:00 PM",
-      cssClass: 'buttonActive',
-      disabled: false,
-      active: false
-    },
-    {
-      time: "12:30 PM",
-      cssClass: 'buttonStyle',
-      disabled: false,
-      active: false
-    },
-    {
-      time: "01:00 PM",
-      cssClass: 'buttonActive',
-      disabled: false,
-      active: false
-    }]
-
-  },
-  {
-    name: " INOX - Prozone mall",
-    city: "Coimbatore",
-    distance: "3.2 km away ",
-    address: "INOX mall ,508, Sathy Rd, Nairobi, 00100",
-    data: [{
-      time: "11:00 AM",
-      cssClass: 'buttonInactive',
-      disabled: true,
-      active: false
-      
-    },
-    {
-      time: "12:00 PM",
-      cssClass: 'buttonActive',
-      disabled: false,
-      active: false
-    }]
-
-  },
-  {
-    name: " Karpagam theatres - 4K Dolby Atoms",
-    city: "Narobi",
-    distance: "4 km away",
-    address: "I-Max Mall,10-b, Sathy Rd, Nairobi, 00100",
-    data: [{
-      time: "09:00 AM",
-      cssClass: 'buttonStyle',
-      disabled: false,
-      active: false
-    },
-    {
-      time: "10:00 PM",
-      cssClass: 'buttonStyle',
-      disabled: false,
-      active: false
-    },
-    {
-      time: "10:30 PM",
-      cssClass: 'buttonInactive',
-      disabled: true,
-      active: false
-    }]
-
-  },
-  {
-    name: "KG theatres - 4K",
-    city: "Coimbatore",
-    distance: "4.4 km away",
-    address: "KG Heights, 225, Sathy Rd, Coimbatore, 00100",
-    data: [{
-      time: "10:00 AM",
-      cssClass: 'buttonInactive',
-      disabled : true,
-      active: false
-    },
-    {
-      time: "10:30 PM",
-      cssClass: 'buttonActive',
-      disabled: false,
-      active: false
-    },
-    {
-      time: "11:30 PM",
-      cssClass: 'buttonStyle',
-      disabled: false,
-      active: false
-    }]
-
-  }]
-
-  ionViewWillEnter()
-  {
-      
-    this.lists[this.i].data[this.j].cssClass = this.selectedTime;
-      
-
-    
+  ionViewWillEnter() {
+    this.lists[this.i].showTiming[this.j].cssClass = this.selectedTime;
   }
-  constructor(private modalCtrl: ModalController, private route: ActivatedRoute,
+  constructor(private loadingController: LoadingController,private service: DataServiceService, private modalCtrl: ModalController, private route: ActivatedRoute,
     public navCtrl: NavController) {
-  
-    this.route.queryParams.subscribe(data =>{
-      console.log(data);
-      this.movie = data.data;
       
+    this.route.queryParams.subscribe(data => {
+      console.log('New data => ', data);
+      this.movieData = data.data;
+
     })
-     }
+   
+    this.service.getShowData().subscribe(resultData => {
+      this.listItems = resultData;
+      this.lists = [];
+      this.showTiming = [];
+      for (var i = 0; i < this.listItems.data.length; i++) {
+
+        this.lists.push({
+          name: this.listItems.data[i].theaterName,
+          location: this.listItems.data[i].location,
+          distance: this.listItems.data[i].distance,
+          address: this.listItems.data[i].address,
+          city: this.listItems.data[i].location,
+          showTiming: []
+
+        })
+        for (var j = 0; j < this.listItems.data[i].showTiming.length; j++) {
+          this.lists[i].showTiming.push({
+            time: this.listItems.data[i].showTiming[j].time,
+            disabled: this.listItems.data[i].showTiming[j].disabled,
+            cssClass: this.listItems.data[i].showTiming[j].cssClass,
+            active: this.listItems.data[i].showTiming[j].active
+          })
+        }
+      }
+    })
+  }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(data => {
-      console.log(data);
-      this.movie = data.data;
-
-    })
+    this.movie = this.movieData;
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const thisMonth = monthNames[(new Date()).getMonth()];
     const nextMonth = monthNames[(new Date()).getMonth() + 1];
     if (localStorage.toggleClass != undefined || localStorage.toggleClass != "") {
       this.day = localStorage.getItem('toggleClass');
       this.mon = thisMonth;
-     
+
     }
-    else{this.today = new Date().toString();}
-    if (this.lang == undefined || this.lang == "" ) {
+    else { this.today = new Date().toString(); }
+    if (this.lang == undefined || this.lang == "") {
 
       this.lang = "Select type";
-    } 
-     
+    }
+
   }
-  
+
   // Show modal
   async openModal(index) {
 
@@ -188,20 +109,20 @@ export class TheaterListPage implements OnInit {
       component: CalendarModalPage,
       cssClass: 'calendar-modal-css',
       componentProps: { day: this.day }
-    
-      
+
+
 
     });
-    modal1.onDidDismiss().then((data) =>{
+    modal1.onDidDismiss().then((data) => {
       const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       const thisMonth = monthNames[(new Date()).getMonth()];
       const nextMonth = monthNames[(new Date()).getMonth() + 1];
       console.log(data['data']);
       // this.today = data['data'];
-     
+
       console.log(thisMonth);
-     
-      if (data['data'] == undefined || data['data'] == "" || localStorage.toggleClass != undefined ) {
+
+      if (data['data'] == undefined || data['data'] == "" || localStorage.toggleClass != undefined) {
         this.day = "";
         this.mon = "";
         this.today = "";
@@ -213,7 +134,7 @@ export class TheaterListPage implements OnInit {
         this.mon = thisMonth;
         console.log(this.today);
       }
-      else if(data !== undefined || data !== ""){
+      else if (data !== undefined || data !== "") {
         console.log(data['data'], thisMonth);
         this.today = "";
         this.day = data['data'];
@@ -230,7 +151,7 @@ export class TheaterListPage implements OnInit {
       component: SeatTypeModalPage,
       cssClass: 'seat-modal-css',
       componentProps: { lang: this.lang, type: this.type }
-      
+
     });
 
     // // Get returned data
@@ -238,7 +159,7 @@ export class TheaterListPage implements OnInit {
       .then(data => {
         this.type = '';
         this.lang = '';
-        if (this.lang == undefined || this.lang == "" ) {
+        if (this.lang == undefined || this.lang == "") {
 
           this.lang = "Select type";
         }
@@ -248,7 +169,7 @@ export class TheaterListPage implements OnInit {
 
           localStorage.removeItem('selectedT');
         }
-        
+
 
         if (localStorage.selectedL != undefined) {
 
@@ -260,30 +181,41 @@ export class TheaterListPage implements OnInit {
     return await modal2.present();
   }
 
-  navigate(index: any,j : any) {
+  async navigate(index: any, j: any) {
+    console.log(index, j);
     var listData = this.lists[index];
     var today = this.today;
     var mon = this.mon;
     var day = this.day;
     var movie = this.movie;
-    this.selectedTime = this.lists[index].data[j].cssClass;
-    this.i = index;
-     this.j = j;
-    console.log(this.lists[index].data[j].cssClass);
-    var timeSelected = this.lists[index].data[j].cssClass = 'selected';
-    // timeSelected.cssClass = 'active';
-    
+    this.selectedTime = this.lists[index].showTiming[j].cssClass;
     console.log(this.selectedTime);
+    var selectedTimeClass = this.selectedTime;
+    this.i = index;
+    this.j = j;
+    console.log(this.lists[index].showTiming[j].cssClass);
+    var timeSelect = this.lists[index].showTiming[j].time;
+    var timeSelected = this.lists[index].showTiming[j].cssClass = 'selected';
+    // timeSelected.cssClass = 'active';
+
+    console.log(timeSelected);
     // if (this.lists[index].data[j].cssClass == 'buttonStyle' || this.lists[index].data[j].cssClass  == 'buttonActive') 
-      
+    const loading = await this.loadingController.create({
+      message: 'Please wait...',
+      duration: 2000
+    });
+    await loading.present();
+   
+    setTimeout(() => {
       this.navCtrl.navigateForward(
         '/seat-selection',
         {
           queryParams: {
-            data: listData, today, mon, day , timeSelected, movie
+            data: listData, today, mon, day, timeSelected, movie, selectedTimeClass, timeSelect
           }
-        })
-   
-   
+        });
+
+    }, 2000);
+
   }
 }
